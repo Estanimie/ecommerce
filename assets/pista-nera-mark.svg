@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <title>Pista Nera Mark</title>
+  <path d="M28 92V28H58C73.464 28 84 38.297 84 52.5C84 66.703 73.464 77 58 77H28" stroke="#111111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M58 32L92 92V28" stroke="#111111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M78 22H96" stroke="#111111" stroke-width="6" stroke-linecap="round"/>
+  <path d="M84 34H102" stroke="#111111" stroke-width="6" stroke-linecap="round"/>
+</svg>

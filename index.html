@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pista Nera es una tienda de look sobrio y pulso racing, pensada para una experiencia mobile-first con carrito, buscador y base de checkout.">
+  <meta name="theme-color" content="#111111">
+  <title>Pista Nera | Store</title>
+  <link rel="icon" type="image/svg+xml" href="assets/pista-nera-mark.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="top-ticker" aria-label="Promociones y mensajes de la tienda">
+    <div class="ticker-track">
+      <span>Bienvenido a Pista Nera</span>
+      <span>Envios a todo el pais</span>
+      <span>Descuentos de lanzamiento</span>
+      <span>Estetica sobria con energia racing</span>
+      <span>Checkout listo para Mercado Pago</span>
+      <span>Bienvenido a Pista Nera</span>
+      <span>Envios a todo el pais</span>
+      <span>Descuentos de lanzamiento</span>
+      <span>Estetica sobria con energia racing</span>
+      <span>Checkout listo para Mercado Pago</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand brand--header" href="#home" aria-label="Ir al inicio de Pista Nera">
+        <img src="assets/pista-nera-mark.svg" alt="Logo de Pista Nera">
+        <div>
+          <span class="brand-name">Pista Nera</span>
+          <span class="brand-tag">motor store</span>
+        </div>
+      </a>
+
+      <div class="header-tools">
+        <label class="search-shell search-shell--header" for="searchInput">
+          <span class="sr-only">Buscar</span>
+          <input id="searchInput" type="search" placeholder="Buscar productos, colecciones o ideas">
+        </label>
+
+        <button class="cart-toggle" id="cartToggle" type="button" aria-haspopup="dialog" aria-controls="cartDrawer">
+          <span class="cart-toggle-icon" aria-hidden="true"></span>
+          <span class="cart-toggle-label">Carrito</span>
+          <span class="cart-toggle-count" id="cartCount" aria-live="polite">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Tienda automotriz y lifestyle</p>
+        <h1>Blanco, negro y un acento naranja justo para que todo se sienta premium y con alma de pista.</h1>
+        <p class="hero-text">
+          Esta base deja el catalogo casi vacio para que completes tu seleccion real despues, pero ya con el tono visual,
+          el buscador, el carrito y el flujo de compra listos para crecer.
+        </p>
+
+        <div class="hero-actions">
+          <a class="primary-button" href="#catalogo">Ver catalogo</a>
+          <a class="ghost-button" href="#legal">Ver seccion legal</a>
+        </div>
+
+        <ul class="hero-points">
+          <li>Experiencia mobile-first para que la tienda luzca mejor desde telefono.</li>
+          <li>Logo original en SVG, fondo blanco y detalles anaranjados sutiles.</li>
+          <li>Carrito funcional con punto preparado para conectar Mercado Pago real.</li>
+        </ul>
+      </div>
+
+      <div class="hero-showcase">
+        <article class="showcase-card">
+          <span class="showcase-badge">Display destacado</span>
+          <div class="showcase-art" aria-hidden="true"></div>
+          <div class="showcase-info">
+            <p>Bolso Track Weekender</p>
+            <strong>$ 89.900</strong>
+            <span>Una pieza de muestra para ver el tono del catalogo: funcional, limpia y con guinos de pit lane.</span>
+          </div>
+        </article>
+
+        <div class="hero-strip">
+          <span class="info-chip">Negro puro</span>
+          <span class="info-chip">Naranja tenue</span>
+          <span class="info-chip">Sobrio y elegante</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog-section" id="catalogo">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Home / productos</p>
+          <h2>Catalogo en display</h2>
+        </div>
+        <p class="section-copy" id="resultsLabel" aria-live="polite"></p>
+      </div>
+
+      <div class="collection-pills" aria-label="Colecciones de la tienda">
+        <span>Garage essentials</span>
+        <span>Cabina</span>
+        <span>Trackwear</span>
+        <span>Objetos de viaje</span>
+        <span>Proximos lanzamientos</span>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <h3>No encontramos coincidencias</h3>
+        <p>Proba con otra palabra o deja el buscador vacio para volver a ver todo el display.</p>
+      </div>
+    </section>
+
+    <section class="story-section" id="sobre-nosotros">
+      <article class="story-card">
+        <p class="eyebrow">Sobre nosotros</p>
+        <h2>Pista Nera mezcla la precision del mundo automotor con una tienda visualmente limpia y lista para vender.</h2>
+        <p>
+          El enfoque es refinado, sin exagerar. La identidad apunta a una marca que puede vender accesorios, lifestyle,
+          piezas seleccionadas o futuros lanzamientos sin perder consistencia.
+        </p>
+      </article>
+
+      <div class="story-grid">
+        <article class="info-panel">
+          <p class="panel-label">Contacto</p>
+          <h3>Canales visibles y claros</h3>
+          <p>hola@pistanera.store</p>
+          <p>+54 11 4000 0000</p>
+          <p>Buenos Aires, Argentina</p>
+        </article>
+
+        <article class="info-panel">
+          <p class="panel-label">Experiencia</p>
+          <h3>Diseno pensado para mobile</h3>
+          <p>Header limpio, buscador directo, carrito accesible y bloques compactos para navegar mejor desde el telefono.</p>
+        </article>
+
+        <article class="info-panel">
+          <p class="panel-label">Pagos</p>
+          <h3>Base lista para Mercado Pago</h3>
+          <p>El boton del carrito ya queda preparado para abrir tu checkout cuando cargues el enlace real o conectes una preferencia.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="legal-section" id="legal">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Legal</p>
+          <h2>Textos base para una tienda mas completa y confiable</h2>
+        </div>
+        <p class="section-copy">Incluye privacidad, terminos, envios y devoluciones para que tengas una base ordenada desde el primer dia.</p>
+      </div>
+
+      <div class="legal-grid">
+        <article class="legal-card" id="privacidad">
+          <p class="panel-label">Privacidad</p>
+          <h3>Politica de privacidad</h3>
+          <p>Los datos que se compartan en la tienda se usan para procesar compras, coordinar entregas y enviar novedades solo cuando el cliente lo autoriza.</p>
+        </article>
+
+        <article class="legal-card" id="terminos">
+          <p class="panel-label">Terminos</p>
+          <h3>Terminos y condiciones</h3>
+          <p>Las compras quedan sujetas a disponibilidad de stock, confirmacion de pago y validacion final de precios, metodos de entrega y datos del comprador.</p>
+        </article>
+
+        <article class="legal-card" id="envios">
+          <p class="panel-label">Envios</p>
+          <h3>Politica de envios</h3>
+          <p>Se informan costos y tiempos antes de finalizar la compra. La preparacion de pedidos se realiza en dias habiles y el seguimiento se comparte por mensaje o correo.</p>
+        </article>
+
+        <article class="legal-card" id="devoluciones">
+          <p class="panel-label">Cambios</p>
+          <h3>Cambios y devoluciones</h3>
+          <p>Se aceptan solicitudes dentro de los plazos legales vigentes siempre que el producto se encuentre en buen estado y conserve su presentacion original.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <button class="cart-overlay" id="cartOverlay" type="button" aria-label="Cerrar carrito"></button>
+
+    <div class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-panel-top">
+        <div class="cart-head">
+          <p class="eyebrow">Checkout</p>
+          <h2 id="cartTitle">Tu carrito</h2>
+          <p class="cart-subcopy" id="cartSubcopy">Revisa los productos agregados y avanza al paso de envio cuando quieras continuar.</p>
+        </div>
+
+        <button class="cart-close" id="cartClose" type="button">Cerrar</button>
+      </div>
+
+      <div class="cart-steps" aria-label="Paso actual del checkout">
+        <span class="cart-step is-active" data-step-indicator="cart">1. Resumen</span>
+        <span class="cart-step" data-step-indicator="checkout">2. Envio</span>
+      </div>
+
+      <section class="cart-stage is-active" id="cartStage">
+        <div class="cart-items" id="cartItems"></div>
+
+        <div class="cart-empty" id="cartEmpty">
+          <h3>Tu carrito esta vacio</h3>
+          <p>Agrega el producto de muestra para ver el flujo de compra completo.</p>
+        </div>
+
+        <div class="cart-summary">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <strong id="cartSubtotal">$ 0</strong>
+          </div>
+          <div class="summary-row">
+            <span>Envio</span>
+            <strong id="cartShipping">$ 0</strong>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <strong id="cartTotal">$ 0</strong>
+          </div>
+
+          <button class="primary-button full-width" id="continueCheckoutButton" type="button">
+            Continuar
+          </button>
+          <p class="checkout-note" id="checkoutNote">Completa tus datos de envio antes de pasar al pago.</p>
+        </div>
+      </section>
+
+      <section class="cart-stage" id="checkoutStage" hidden>
+        <form class="checkout-form" id="checkoutForm" novalidate>
+          <div class="checkout-form-grid">
+            <label class="checkout-field">
+              <span>Nombre completo</span>
+              <input type="text" name="fullName" autocomplete="name" required>
+            </label>
+
+            <label class="checkout-field">
+              <span>Email</span>
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+
+            <label class="checkout-field">
+              <span>Telefono</span>
+              <input type="tel" name="phone" autocomplete="tel" required>
+            </label>
+
+            <label class="checkout-field">
+              <span>Provincia</span>
+              <input type="text" name="region" autocomplete="address-level1" required>
+            </label>
+
+            <label class="checkout-field checkout-field--full">
+              <span>Direccion</span>
+              <input type="text" name="addressLine1" autocomplete="address-line1" required>
+            </label>
+
+            <label class="checkout-field">
+              <span>Depto / piso</span>
+              <input type="text" name="addressLine2" autocomplete="address-line2">
+            </label>
+
+            <label class="checkout-field">
+              <span>Ciudad</span>
+              <input type="text" name="city" autocomplete="address-level2" required>
+            </label>
+
+            <label class="checkout-field">
+              <span>Codigo postal</span>
+              <input type="text" name="postalCode" autocomplete="postal-code" required>
+            </label>
+
+            <label class="checkout-field">
+              <span>Metodo de envio</span>
+              <select name="shippingMethod" required>
+                <option value="domicilio" selected>Envio a domicilio</option>
+                <option value="retiro">Retiro coordinado</option>
+              </select>
+            </label>
+
+            <label class="checkout-field checkout-field--full">
+              <span>Indicaciones</span>
+              <textarea name="notes" rows="3" placeholder="Opcional: referencia de puerta, horario, observaciones de entrega."></textarea>
+            </label>
+          </div>
+
+          <div class="checkout-review">
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <strong id="checkoutSubtotal">$ 0</strong>
+            </div>
+            <div class="summary-row">
+              <span>Envio</span>
+              <strong id="checkoutShipping">$ 0</strong>
+            </div>
+            <div class="summary-row total">
+              <span>Total</span>
+              <strong id="checkoutTotal">$ 0</strong>
+            </div>
+
+            <div class="customer-summary" id="customerSummary">
+              Completa tus datos para validar el checkout antes de pasar al pago.
+            </div>
+          </div>
+
+          <div class="checkout-actions">
+            <button class="ghost-button" id="backToCartButton" type="button">Volver</button>
+            <button class="primary-button full-width" id="mercadoPagoButton" type="submit">
+              Continuar al pago
+            </button>
+          </div>
+
+          <p class="checkout-note" id="checkoutStageNote">Valida direccion y contacto antes de salir al checkout de pago.</p>
+        </form>
+      </section>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <a class="brand brand--footer" href="#home">
+        <img src="assets/pista-nera-mark.svg" alt="Logo de Pista Nera">
+        <div>
+          <span class="brand-name">Pista Nera</span>
+          <span class="brand-tag">store</span>
+        </div>
+      </a>
+      <p>Una base de e-commerce sobria, con influencia automotriz y preparada para seguir creciendo.</p>
+    </div>
+
+    <nav class="footer-links" aria-label="Enlaces del pie de pagina">
+      <a href="#sobre-nosotros">Sobre nosotros</a>
+      <a href="#catalogo">Productos</a>
+      <a href="#privacidad">Politica de privacidad</a>
+      <a href="#terminos">Terminos y condiciones</a>
+      <a href="#envios">Politica de envios</a>
+      <a href="#devoluciones">Cambios y devoluciones</a>
+      <a href="mailto:hola@pistanera.store">Contacto</a>
+    </nav>
+
+    <p class="footer-copy">&copy; <span id="currentYear"></span> Pista Nera. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="mercadopago-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
