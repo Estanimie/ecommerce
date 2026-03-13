@@ -1,29 +1,29 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Pista Nera es una tienda de look sobrio y pulso racing, pensada para una experiencia mobile-first con carrito, buscador y base de checkout.">
+  <meta name="description" content="Pista Nera es una tienda de look sobrio y pulso racing, pensada para una experiencia mobile-first con carrito, buscador y acceso directo a productos destacados.">
   <meta name="theme-color" content="#111111">
-  <title>Pista Nera | Store</title>
+  <title>Pista Nera | Home</title>
   <link rel="icon" type="image/svg+xml" href="assets/pista-nera-mark.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-site-root="">
   <div class="top-ticker" aria-label="Promociones y mensajes de la tienda">
     <div class="ticker-track">
       <span>Bienvenido a Pista Nera</span>
       <span>Envios a todo el pais</span>
       <span>Descuentos de lanzamiento</span>
-      <span>Estetica sobria con energia racing</span>
+      <span>Acceso directo a producto destacado</span>
       <span>Checkout listo para Mercado Pago</span>
       <span>Bienvenido a Pista Nera</span>
       <span>Envios a todo el pais</span>
       <span>Descuentos de lanzamiento</span>
-      <span>Estetica sobria con energia racing</span>
+      <span>Acceso directo a producto destacado</span>
       <span>Checkout listo para Mercado Pago</span>
     </div>
   </div>
@@ -57,39 +57,42 @@
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow">Tienda automotriz y lifestyle</p>
-        <h1>Blanco, negro y un acento naranja justo para que todo se sienta premium y con alma de pista.</h1>
+        <h1>Una home sobria para mostrar marca, catalogo y acceso directo a una ficha de producto real.</h1>
         <p class="hero-text">
-          Esta base deja el catalogo casi vacio para que completes tu seleccion real despues, pero ya con el tono visual,
-          el buscador, el carrito y el flujo de compra listos para crecer.
+          La portada vuelve a enfocarse en descubrimiento: identidad, producto destacado, catalogo y bloques de confianza.
+          El detalle completo ahora vive en su propia pagina para que la navegacion se sienta mas real.
         </p>
 
         <div class="hero-actions">
-          <a class="primary-button" href="#catalogo">Ver catalogo</a>
-          <a class="ghost-button" href="#legal">Ver seccion legal</a>
+          <a class="primary-button" href="product.html">Ver producto destacado</a>
+          <a class="ghost-button" href="#catalogo">Ver catalogo</a>
         </div>
 
         <ul class="hero-points">
-          <li>Experiencia mobile-first para que la tienda luzca mejor desde telefono.</li>
-          <li>Logo original en SVG, fondo blanco y detalles anaranjados sutiles.</li>
-          <li>Carrito funcional con punto preparado para conectar Mercado Pago real.</li>
+          <li>Home pensada para descubrir la marca y entrar al producto desde un click.</li>
+          <li>Catalogo con CTA directo a la pagina `product`.</li>
+          <li>Carrito funcional con base lista para conectar Mercado Pago real.</li>
         </ul>
       </div>
 
       <div class="hero-showcase">
         <article class="showcase-card">
-          <span class="showcase-badge">Display destacado</span>
-          <div class="showcase-art" aria-hidden="true"></div>
+          <span class="showcase-badge">Producto destacado</span>
+          <div class="showcase-art showcase-art--wheel">
+            <img src="assets/rim-main.jpg" alt="Llanta Veloce R19 Graphite en primer plano">
+          </div>
           <div class="showcase-info">
-            <p>Bolso Track Weekender</p>
-            <strong>$ 89.900</strong>
-            <span>Una pieza de muestra para ver el tono del catalogo: funcional, limpia y con guinos de pit lane.</span>
+            <p>Llanta Veloce R19 Graphite</p>
+            <strong>$ 245.000</strong>
+            <span>Entrada principal a la nueva pagina de producto, con galeria, cantidad, carrito y compra directa.</span>
+            <a class="product-link" href="product.html">Entrar al producto</a>
           </div>
         </article>
 
         <div class="hero-strip">
-          <span class="info-chip">Negro puro</span>
-          <span class="info-chip">Naranja tenue</span>
-          <span class="info-chip">Sobrio y elegante</span>
+          <span class="info-chip">19 pulgadas</span>
+          <span class="info-chip">Graphite satin</span>
+          <span class="info-chip">Envio en 3 a 6 dias</span>
         </div>
       </div>
     </section>
@@ -104,9 +107,9 @@
       </div>
 
       <div class="collection-pills" aria-label="Colecciones de la tienda">
+        <span>Llantas performance</span>
         <span>Garage essentials</span>
         <span>Cabina</span>
-        <span>Trackwear</span>
         <span>Objetos de viaje</span>
         <span>Proximos lanzamientos</span>
       </div>
@@ -213,7 +216,7 @@
 
         <div class="cart-empty" id="cartEmpty">
           <h3>Tu carrito esta vacio</h3>
-          <p>Agrega el producto de muestra para ver el flujo de compra completo.</p>
+          <p>Agrega la llanta destacada o usa el catalogo para ver el flujo de compra completo.</p>
         </div>
 
         <div class="cart-summary">
@@ -339,6 +342,7 @@
     </div>
 
     <nav class="footer-links" aria-label="Enlaces del pie de pagina">
+      <a href="product.html">Producto destacado</a>
       <a href="#sobre-nosotros">Sobre nosotros</a>
       <a href="#catalogo">Productos</a>
       <a href="#privacidad">Politica de privacidad</a>
@@ -351,7 +355,12 @@
     <p class="footer-copy">&copy; <span id="currentYear"></span> Pista Nera. Todos los derechos reservados.</p>
   </footer>
 
-  <script src="mercadopago-config.js"></script>
+  <script src="products-data.js"></script>
+  <script src="site-config.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
+
+
+
+

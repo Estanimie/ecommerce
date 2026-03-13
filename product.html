@@ -1,0 +1,384 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pista Nera | Pagina de producto para la llanta Veloce R19 Graphite.">
+  <meta name="theme-color" content="#111111">
+  <title>Pista Nera | Product</title>
+  <link rel="icon" type="image/svg+xml" href="assets/pista-nera-mark.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-site-root="">
+  <div class="top-ticker" aria-label="Promociones y mensajes de la tienda">
+    <div class="ticker-track">
+      <span>Pista Nera / product</span>
+      <span>Llanta Veloce R19 Graphite</span>
+      <span>Envios a todo el pais</span>
+      <span>Checkout listo para Mercado Pago</span>
+      <span>Pista Nera / product</span>
+      <span>Llanta Veloce R19 Graphite</span>
+      <span>Envios a todo el pais</span>
+      <span>Checkout listo para Mercado Pago</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand brand--header" href="index.html" aria-label="Volver al inicio de Pista Nera">
+        <img src="assets/pista-nera-mark.svg" alt="Logo de Pista Nera">
+        <div>
+          <span class="brand-name">Pista Nera</span>
+          <span class="brand-tag">motor store</span>
+        </div>
+      </a>
+
+      <div class="header-tools">
+        <a class="ghost-button full-width" href="index.html#catalogo">Volver al home</a>
+
+        <button class="cart-toggle" id="cartToggle" type="button" aria-haspopup="dialog" aria-controls="cartDrawer">
+          <span class="cart-toggle-icon" aria-hidden="true"></span>
+          <span class="cart-toggle-label">Carrito</span>
+          <span class="cart-toggle-count" id="cartCount" aria-live="polite">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="product-detail-section" id="product-page">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Pagina / product</p>
+          <h2>Llanta Veloce R19 Graphite</h2>
+        </div>
+        <p class="section-copy">Una ficha de producto separada de la home para que el recorrido sea: entrar, mirar detalles, elegir cantidad y comprar.</p>
+      </div>
+
+      <div class="product-detail-shell">
+        <article class="product-gallery-card">
+          <div class="product-gallery-main">
+            <img id="productDetailImage" src="assets/rim-main.jpg" alt="Llanta Veloce R19 Graphite vista principal">
+            <span class="gallery-badge">Entrega inmediata</span>
+          </div>
+
+          <div class="product-thumbs" id="productThumbs" aria-label="Galeria del producto">
+            <button class="product-thumb is-active" type="button" data-image="assets/rim-main.jpg" data-alt="Llanta Veloce R19 Graphite vista principal" aria-pressed="true">
+              <img src="assets/rim-main.jpg" alt="Miniatura principal de la llanta">
+            </button>
+            <button class="product-thumb" type="button" data-image="assets/rim-detail-1.jpg" data-alt="Llanta Veloce R19 Graphite montada en un vehiculo" aria-pressed="false">
+              <img src="assets/rim-detail-1.jpg" alt="Miniatura lateral de la llanta">
+            </button>
+            <button class="product-thumb" type="button" data-image="assets/rim-detail-2.jpg" data-alt="Llanta Veloce R19 Graphite con freno a la vista" aria-pressed="false">
+              <img src="assets/rim-detail-2.jpg" alt="Miniatura de detalle de la llanta">
+            </button>
+          </div>
+        </article>
+
+        <article class="product-detail-card">
+          <div class="product-detail-topline">
+            <span>Llantas / performance</span>
+            <span>Stock limitado</span>
+          </div>
+
+          <h3>Llanta Veloce R19 Graphite</h3>
+          <p class="product-detail-price">$ 245.000</p>
+          <p class="product-detail-lead">
+            Llanta de look sobrio con terminacion graphite satin, aro 19 y un diseno multirradio pensado para darle presencia
+            al auto sin perder elegancia. Esta ficha queda lista para usar como base real de futuros productos de la tienda.
+          </p>
+
+          <ul class="product-detail-points">
+            <li>Construccion liviana en aleacion de aluminio con foco en rigidez y balance.</li>
+            <li>Acabado oscuro facil de integrar con autos blancos, negros o grises.</li>
+            <li>Centro y borde trabajados para un look premium con inspiracion motorsport.</li>
+          </ul>
+
+          <div class="purchase-panel">
+            <div class="quantity-picker" aria-label="Cantidad a agregar">
+              <button id="productQuantityDecrease" type="button" aria-label="Restar una unidad">-</button>
+              <input id="productQuantityInput" type="number" min="1" max="8" step="1" value="1" inputmode="numeric">
+              <button id="productQuantityIncrease" type="button" aria-label="Sumar una unidad">+</button>
+            </div>
+
+            <div class="product-detail-actions">
+              <button class="primary-button full-width" id="detailAddToCartButton" type="button">Agregar al carrito</button>
+              <button class="ghost-button full-width" id="detailBuyNowButton" type="button">Comprar ahora</button>
+            </div>
+          </div>
+
+          <div class="trust-grid">
+            <article class="trust-card">
+              <p class="panel-label">Envio</p>
+              <h4>Despacho rapido</h4>
+              <p>Preparacion en 24 a 48 horas habiles y entrega estimada entre 3 y 6 dias segun zona.</p>
+            </article>
+
+            <article class="trust-card">
+              <p class="panel-label">Retiro</p>
+              <h4>Opcion coordinada</h4>
+              <p>Tambien podes retirar por deposito con turno confirmado y revision del producto en el momento.</p>
+            </article>
+
+            <article class="trust-card">
+              <p class="panel-label">Pago</p>
+              <h4>Checkout seguro</h4>
+              <p>La base actual ya conecta este flujo con el carrito y queda lista para avanzar a Mercado Pago.</p>
+            </article>
+          </div>
+        </article>
+      </div>
+
+      <div class="product-longform">
+        <article class="detail-copy-card">
+          <p class="eyebrow">Descripcion</p>
+          <h3>Una llanta para una pagina de producto que se sienta completa desde el primer vistazo.</h3>
+          <p>
+            La Veloce R19 Graphite esta pensada como una pieza de presencia. El frente limpio, la profundidad visual del aro
+            y el contraste entre radios finos y centro reforzado ayudan a que el producto transmita calidad incluso antes de
+            entrar a la parte tecnica.
+          </p>
+          <p>
+            Para esta prueba inventamos una configuracion orientada a calle deportiva: terminacion satin, centro mecanizado,
+            compatibilidad con buloneria de alto torque y un fitment pensado para sedanes, hatchbacks y SUVs de look mas
+            agresivo. La idea es que la pagina ya tenga narrativa, argumentos y estructura comercial.
+          </p>
+
+          <div class="spec-grid">
+            <article class="spec-card">
+              <span>Medida</span>
+              <strong>19 x 8.5</strong>
+            </article>
+            <article class="spec-card">
+              <span>PCD</span>
+              <strong>5x112 / 5x114.3</strong>
+            </article>
+            <article class="spec-card">
+              <span>Offset</span>
+              <strong>ET38</strong>
+            </article>
+            <article class="spec-card">
+              <span>Peso aprox.</span>
+              <strong>11.2 kg</strong>
+            </article>
+          </div>
+        </article>
+
+        <div class="detail-media-grid">
+          <article class="detail-media-card">
+            <img src="assets/rim-detail-1.jpg" alt="Llanta Veloce R19 Graphite montada en un vehiculo negro">
+            <div>
+              <p class="panel-label">Visual</p>
+              <h3>Presencia sobria con acento deportivo</h3>
+              <p>Ideal para un producto premium: radios delgados, freno visible y lectura rapida del acabado.</p>
+            </div>
+          </article>
+
+          <article class="detail-media-card">
+            <img src="assets/rim-detail-2.jpg" alt="Detalle de la llanta Veloce R19 Graphite con freno amarillo">
+            <div>
+              <p class="panel-label">Detalle</p>
+              <h3>Buena foto para reforzar confianza</h3>
+              <p>Sirve para mostrar terminacion, profundidad y como convive la llanta con un conjunto de frenos mas grande.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="policy-grid">
+        <article class="policy-card">
+          <p class="panel-label">Envios</p>
+          <h3>Tiempo estimado de entrega</h3>
+          <p>Capital y GBA: 3 a 4 dias habiles. Interior: 5 a 7 dias habiles. Si el pedido requiere balanceo o control final, puede sumar 24 horas.</p>
+        </article>
+
+        <article class="policy-card">
+          <p class="panel-label">Reembolsos</p>
+          <h3>Prueba de 10 dias</h3>
+          <p>Si el producto no fue montado ni presenta marcas de uso, aceptamos devolucion dentro de los 10 dias corridos y reintegramos el pago por el mismo medio.</p>
+        </article>
+
+        <article class="policy-card">
+          <p class="panel-label">Politicas</p>
+          <h3>Condiciones de compra</h3>
+          <p>Las fotos son ilustrativas, el stock se confirma al cerrar la compra y recomendamos validar compatibilidad con tu vehiculo antes de despachar.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <button class="cart-overlay" id="cartOverlay" type="button" aria-label="Cerrar carrito"></button>
+
+    <div class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-panel-top">
+        <div class="cart-head">
+          <p class="eyebrow">Checkout</p>
+          <h2 id="cartTitle">Tu carrito</h2>
+          <p class="cart-subcopy" id="cartSubcopy">Revisa los productos agregados y avanza al paso de envio cuando quieras continuar.</p>
+        </div>
+
+        <button class="cart-close" id="cartClose" type="button">Cerrar</button>
+      </div>
+
+      <div class="cart-steps" aria-label="Paso actual del checkout">
+        <span class="cart-step is-active" data-step-indicator="cart">1. Resumen</span>
+        <span class="cart-step" data-step-indicator="checkout">2. Envio</span>
+      </div>
+
+      <section class="cart-stage is-active" id="cartStage">
+        <div class="cart-items" id="cartItems"></div>
+
+        <div class="cart-empty" id="cartEmpty">
+          <h3>Tu carrito esta vacio</h3>
+          <p>Agrega la llanta destacada para ver el flujo de compra completo.</p>
+        </div>
+
+        <div class="cart-summary">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <strong id="cartSubtotal">$ 0</strong>
+          </div>
+          <div class="summary-row">
+            <span>Envio</span>
+            <strong id="cartShipping">$ 0</strong>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <strong id="cartTotal">$ 0</strong>
+          </div>
+
+          <button class="primary-button full-width" id="continueCheckoutButton" type="button">
+            Continuar
+          </button>
+          <p class="checkout-note" id="checkoutNote">Completa tus datos de envio antes de pasar al pago.</p>
+        </div>
+      </section>
+
+      <section class="cart-stage" id="checkoutStage" hidden>
+        <form class="checkout-form" id="checkoutForm" novalidate>
+          <div class="checkout-form-grid">
+            <label class="checkout-field">
+              <span>Nombre completo</span>
+              <input type="text" name="fullName" autocomplete="name" required>
+            </label>
+
+            <label class="checkout-field">
+              <span>Email</span>
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+
+            <label class="checkout-field">
+              <span>Telefono</span>
+              <input type="tel" name="phone" autocomplete="tel" required>
+            </label>
+
+            <label class="checkout-field">
+              <span>Provincia</span>
+              <input type="text" name="region" autocomplete="address-level1" required>
+            </label>
+
+            <label class="checkout-field checkout-field--full">
+              <span>Direccion</span>
+              <input type="text" name="addressLine1" autocomplete="address-line1" required>
+            </label>
+
+            <label class="checkout-field">
+              <span>Depto / piso</span>
+              <input type="text" name="addressLine2" autocomplete="address-line2">
+            </label>
+
+            <label class="checkout-field">
+              <span>Ciudad</span>
+              <input type="text" name="city" autocomplete="address-level2" required>
+            </label>
+
+            <label class="checkout-field">
+              <span>Codigo postal</span>
+              <input type="text" name="postalCode" autocomplete="postal-code" required>
+            </label>
+
+            <label class="checkout-field">
+              <span>Metodo de envio</span>
+              <select name="shippingMethod" required>
+                <option value="domicilio" selected>Envio a domicilio</option>
+                <option value="retiro">Retiro coordinado</option>
+              </select>
+            </label>
+
+            <label class="checkout-field checkout-field--full">
+              <span>Indicaciones</span>
+              <textarea name="notes" rows="3" placeholder="Opcional: referencia de puerta, horario, observaciones de entrega."></textarea>
+            </label>
+          </div>
+
+          <div class="checkout-review">
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <strong id="checkoutSubtotal">$ 0</strong>
+            </div>
+            <div class="summary-row">
+              <span>Envio</span>
+              <strong id="checkoutShipping">$ 0</strong>
+            </div>
+            <div class="summary-row total">
+              <span>Total</span>
+              <strong id="checkoutTotal">$ 0</strong>
+            </div>
+
+            <div class="customer-summary" id="customerSummary">
+              Completa tus datos para validar el checkout antes de pasar al pago.
+            </div>
+          </div>
+
+          <div class="checkout-actions">
+            <button class="ghost-button" id="backToCartButton" type="button">Volver</button>
+            <button class="primary-button full-width" id="mercadoPagoButton" type="submit">
+              Continuar al pago
+            </button>
+          </div>
+
+          <p class="checkout-note" id="checkoutStageNote">Valida direccion y contacto antes de salir al checkout de pago.</p>
+        </form>
+      </section>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <a class="brand brand--footer" href="index.html">
+        <img src="assets/pista-nera-mark.svg" alt="Logo de Pista Nera">
+        <div>
+          <span class="brand-name">Pista Nera</span>
+          <span class="brand-tag">store</span>
+        </div>
+      </a>
+      <p>Una base de e-commerce sobria, con influencia automotriz y preparada para seguir creciendo.</p>
+    </div>
+
+    <nav class="footer-links" aria-label="Enlaces del pie de pagina">
+      <a href="product.html">Producto destacado</a>
+      <a href="index.html#sobre-nosotros">Sobre nosotros</a>
+      <a href="index.html#catalogo">Productos</a>
+      <a href="index.html#privacidad">Politica de privacidad</a>
+      <a href="index.html#terminos">Terminos y condiciones</a>
+      <a href="index.html#envios">Politica de envios</a>
+      <a href="index.html#devoluciones">Cambios y devoluciones</a>
+      <a href="mailto:hola@pistanera.store">Contacto</a>
+    </nav>
+
+    <p class="footer-copy">&copy; <span id="currentYear"></span> Pista Nera. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="products-data.js"></script>
+  <script src="site-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+
+

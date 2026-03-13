@@ -1,0 +1,246 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Resultado del checkout de Pista Nera.">
+  <meta name="theme-color" content="#111111">
+  <title>Pista Nera | Estado del pago</title>
+  <link rel="icon" type="image/svg+xml" href="assets/pista-nera-mark.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="top-ticker" aria-label="Estado del pago">
+    <div class="ticker-track">
+      <span>Resultado del pago</span>
+      <span>Pista Nera checkout</span>
+      <span>Mercado Pago</span>
+      <span>Resultado del pago</span>
+      <span>Pista Nera checkout</span>
+      <span>Mercado Pago</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand brand--header" href="index.html" aria-label="Volver al inicio de Pista Nera">
+        <img src="assets/pista-nera-mark.svg" alt="Logo de Pista Nera">
+        <div>
+          <span class="brand-name">Pista Nera</span>
+          <span class="brand-tag">motor store</span>
+        </div>
+      </a>
+
+      <div class="header-tools">
+        <a class="ghost-button full-width" href="index.html">Volver al home</a>
+        <a class="primary-button full-width" href="product.html">Ver producto</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="product-detail-section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Checkout</p>
+          <h2 id="paymentResultTitle">Estamos revisando tu pago</h2>
+        </div>
+        <p class="section-copy" id="paymentResultLead">En unos segundos te mostramos el estado final y el detalle de la orden.</p>
+      </div>
+
+      <div class="product-longform">
+        <article class="detail-copy-card">
+          <p class="eyebrow">Estado</p>
+          <h3 id="paymentStatusHeading">Procesando confirmacion</h3>
+          <p id="paymentStatusMessage">Consultando la orden y la notificacion mas reciente de Mercado Pago.</p>
+
+          <div class="spec-grid" id="paymentMetaGrid">
+            <article class="spec-card">
+              <span>Orden</span>
+              <strong id="paymentOrderId">-</strong>
+            </article>
+            <article class="spec-card">
+              <span>Pago</span>
+              <strong id="paymentId">-</strong>
+            </article>
+            <article class="spec-card">
+              <span>Estado</span>
+              <strong id="paymentStatusCode">-</strong>
+            </article>
+            <article class="spec-card">
+              <span>Total</span>
+              <strong id="paymentAmount">-</strong>
+            </article>
+          </div>
+        </article>
+
+        <article class="detail-copy-card">
+          <p class="eyebrow">Detalle</p>
+          <h3>Resumen de la orden</h3>
+          <p id="paymentOrderSummary">Todavia no tenemos datos de la orden para mostrar.</p>
+          <div class="trust-grid">
+            <article class="trust-card">
+              <p class="panel-label">Siguiente paso</p>
+              <h4 id="paymentNextStep">Espera la confirmacion</h4>
+              <p id="paymentNextStepCopy">Si el pago fue aprobado, la acreditacion aparece en tu cuenta de Mercado Pago y el pedido queda registrado en el backend.</p>
+            </article>
+            <article class="trust-card">
+              <p class="panel-label">Soporte</p>
+              <h4>Te dejamos cubierto</h4>
+              <p>Si algo falla, revisa los logs del servidor y las notificaciones webhook para ver el estado real de la orden.</p>
+            </article>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <a class="brand brand--footer" href="index.html">
+        <img src="assets/pista-nera-mark.svg" alt="Logo de Pista Nera">
+        <div>
+          <span class="brand-name">Pista Nera</span>
+          <span class="brand-tag">store</span>
+        </div>
+      </a>
+      <p>Resultado del checkout conectado al backend de Mercado Pago.</p>
+    </div>
+
+    <nav class="footer-links" aria-label="Enlaces del pie de pagina">
+      <a href="index.html">Home</a>
+      <a href="product.html">Producto</a>
+      <a href="mailto:hola@pistanera.store">Contacto</a>
+    </nav>
+
+    <p class="footer-copy">&copy; <span id="paymentResultYear"></span> Pista Nera. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="site-config.js"></script>
+  <script>
+    const runtimeConfig = window.PISTA_NERA_CONFIG || {};
+    const apiBaseUrl = typeof runtimeConfig.apiBaseUrl === "string" ? runtimeConfig.apiBaseUrl.trim().replace(/\/$/, "") : "";
+    const getApiUrl = (path) => apiBaseUrl ? `${apiBaseUrl}${path}` : path;
+
+    const currencyFormatter = new Intl.NumberFormat("es-AR", {
+      style: "currency",
+      currency: "ARS",
+      maximumFractionDigits: 0
+    });
+
+    const statusCopy = {
+      approved: {
+        title: "Pago aprobado",
+        lead: "Mercado Pago confirmo la transaccion y el backend ya la registro.",
+        heading: "La compra quedo acreditada",
+        message: "La orden ya puede pasar a preparacion y despacho.",
+        nextStep: "Preparar el pedido",
+        nextStepCopy: "La acreditacion impacta en tu cuenta de Mercado Pago y la orden queda marcada como pagada en tu sistema."
+      },
+      pending: {
+        title: "Pago pendiente",
+        lead: "Mercado Pago recibio la operacion pero todavia no la confirmo como aprobada.",
+        heading: "Estamos esperando la acreditacion",
+        message: "El webhook va a actualizar esta orden apenas Mercado Pago confirme el estado final.",
+        nextStep: "Esperar confirmacion",
+        nextStepCopy: "No despaches hasta ver el pago como aprobado. Revisalo de nuevo en unos minutos."
+      },
+      rejected: {
+        title: "Pago rechazado",
+        lead: "La operacion no pudo completarse o fue rechazada por el medio de pago.",
+        heading: "La compra no se acredito",
+        message: "El cliente puede volver a intentarlo con otro medio o generar una nueva preferencia.",
+        nextStep: "Reintentar cobro",
+        nextStepCopy: "La orden queda registrada igual, pero no deberia avanzar a despacho."
+      },
+      in_process: {
+        title: "Pago en proceso",
+        lead: "Mercado Pago sigue procesando el pago.",
+        heading: "La orden sigue en revision",
+        message: "Todavia no hay definicion final sobre la acreditacion.",
+        nextStep: "Esperar webhook",
+        nextStepCopy: "El backend va a actualizar la orden apenas llegue una notificacion valida."
+      },
+      default: {
+        title: "Estado del pago",
+        lead: "Te mostramos el estado mas reciente informado por Mercado Pago.",
+        heading: "Orden registrada",
+        message: "Si el pago cambia de estado, esta pagina y el backend deberian reflejarlo via webhook.",
+        nextStep: "Verificar logs",
+        nextStepCopy: "Si no ves cambios, revisa el webhook y la configuracion de URLs publicas."
+      }
+    };
+
+    function readQuery() {
+      const params = new URLSearchParams(window.location.search);
+      return {
+        orderId: params.get("external_reference") || params.get("order_id") || "",
+        paymentId: params.get("payment_id") || "",
+        status: params.get("status") || ""
+      };
+    }
+
+    function setCopy(status) {
+      const content = statusCopy[status] || statusCopy.default;
+      document.getElementById("paymentResultTitle").textContent = content.title;
+      document.getElementById("paymentResultLead").textContent = content.lead;
+      document.getElementById("paymentStatusHeading").textContent = content.heading;
+      document.getElementById("paymentStatusMessage").textContent = content.message;
+      document.getElementById("paymentNextStep").textContent = content.nextStep;
+      document.getElementById("paymentNextStepCopy").textContent = content.nextStepCopy;
+    }
+
+    function fillFallbackMeta(query) {
+      document.getElementById("paymentOrderId").textContent = query.orderId || "-";
+      document.getElementById("paymentId").textContent = query.paymentId || "-";
+      document.getElementById("paymentStatusCode").textContent = query.status || "-";
+    }
+
+    async function loadOrder(query) {
+      if (!query.orderId) {
+        return;
+      }
+
+      try {
+        const response = await fetch(getApiUrl(`/api/orders/${encodeURIComponent(query.orderId)}`));
+        const payload = await response.json();
+
+        if (!response.ok || !payload.order) {
+          return;
+        }
+
+        const order = payload.order;
+        const serverStatus = order.paymentStatus || order.status || query.status || "default";
+        setCopy(serverStatus);
+        document.getElementById("paymentOrderId").textContent = order.orderId || query.orderId || "-";
+        document.getElementById("paymentId").textContent = order.paymentId || query.paymentId || "-";
+        document.getElementById("paymentStatusCode").textContent = serverStatus;
+        document.getElementById("paymentAmount").textContent = typeof order.totalAmount === "number"
+          ? currencyFormatter.format(order.totalAmount)
+          : "-";
+
+        const items = Array.isArray(order.items) ? order.items.map((item) => `${item.quantity} x ${item.name}`).join(", ") : "Sin items";
+        const customer = order.customer?.fullName || order.customer?.email || "Cliente sin datos";
+        document.getElementById("paymentOrderSummary").textContent = `${customer}. ${items}. Metodo de envio: ${order.shippingMethod || "domicilio"}.`;
+      } catch (error) {
+        console.warn("No se pudo cargar la orden.", error);
+      }
+    }
+
+    async function init() {
+      const query = readQuery();
+      const status = query.status || "default";
+      setCopy(status);
+      fillFallbackMeta(query);
+      document.getElementById("paymentResultYear").textContent = String(new Date().getFullYear());
+      await loadOrder(query);
+    }
+
+    init();
+  </script>
+</body>
+</html>
+

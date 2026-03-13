@@ -1,4 +1,3 @@
-window.MERCADO_PAGO_CONFIG = {
-  // Pega aqui el init_point o checkout URL real generado desde tu cuenta de Mercado Pago.
-  checkoutUrl: ""
-};
+﻿// Archivo legado. La integracion real de Mercado Pago ahora vive en `server.js`
+// y toma las credenciales desde `.env` en el backend.
+window.MERCADO_PAGO_CONFIG = {};
