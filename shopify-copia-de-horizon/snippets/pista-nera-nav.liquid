@@ -1,0 +1,31 @@
+{% liquid
+  assign product_link = '/products/air-forge-portable-tire-inflator'
+  if product != blank
+    assign product_link = product.url
+  endif
+%}
+
+{% if variant == 'mobile' %}
+  <details class="pista-nera-mobile-nav">
+    <summary class="button-unstyled pista-nera-mobile-nav__trigger" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </summary>
+    <div class="pista-nera-mobile-nav__panel">
+      <a href="{{ product_link }}">Air Forge</a>
+      <a href="mailto:{{ support_email }}">Support</a>
+      {% if shop.customer_accounts_enabled %}
+        <a href="{{ routes.account_url }}">Account</a>
+      {% endif %}
+    </div>
+  </details>
+{% else %}
+  <nav class="pista-nera-desktop-nav" aria-label="Primary">
+    <a href="{{ product_link }}">Air Forge</a>
+    <a href="mailto:{{ support_email }}">Support</a>
+    {% if shop.customer_accounts_enabled %}
+      <a href="{{ routes.account_url }}">Account</a>
+    {% endif %}
+  </nav>
+{% endif %}

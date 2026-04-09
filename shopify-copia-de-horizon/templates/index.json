@@ -1,0 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */{
+  "sections": {
+    "pista_nera_home": {
+      "type": "pista-nera-home",
+      "settings": {
+        "featured_product": "air-forge-portable-tire-inflator",
+        "support_email": "support@pistanera.com",
+        "padding-block-start": 24,
+        "padding-block-end": 72
+      }
+    }
+  },
+  "order": [
+    "pista_nera_home"
+  ]
+}
