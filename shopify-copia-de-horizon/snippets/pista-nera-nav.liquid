@@ -14,18 +14,12 @@
     </summary>
     <div class="pista-nera-mobile-nav__panel">
       <a href="{{ product_link }}">Air Forge</a>
-      <a href="mailto:{{ support_email }}">Support</a>
-      {% if shop.customer_accounts_enabled %}
-        <a href="{{ routes.account_url }}">Account</a>
-      {% endif %}
+      <a href="/pages/contact">Support</a>
     </div>
   </details>
 {% else %}
   <nav class="pista-nera-desktop-nav" aria-label="Primary">
     <a href="{{ product_link }}">Air Forge</a>
-    <a href="mailto:{{ support_email }}">Support</a>
-    {% if shop.customer_accounts_enabled %}
-      <a href="{{ routes.account_url }}">Account</a>
-    {% endif %}
+    <a href="/pages/contact">Support</a>
   </nav>
 {% endif %}

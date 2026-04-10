@@ -3,10 +3,14 @@
   if support_email == blank
     assign support_email = 'support@pistanera.com'
   endif
-
   assign showcase_media = product.media[2]
   if showcase_media == blank
     assign showcase_media = product.featured_media
+  endif
+
+  assign secondary_media = product.media[3]
+  if secondary_media == blank
+    assign secondary_media = product.featured_media
   endif
 %}
 
@@ -16,38 +20,23 @@
     class="pista-nera-product-story spacing-style"
     style="{% render 'spacing-style', settings: section.settings %}"
   >
-    <div class="pista-nera-product-story__top">
+    <div class="pista-nera-product-story__top" data-pn-reveal>
       <div class="pista-nera-product-story__header">
         <p class="pista-nera-product-story__label">PDP detail layer</p>
-        <h2>{{ product.title }} is framed to convert like a modern single-product storefront.</h2>
+        <h2>{{ product.title }} is now framed to convert like a single-product launch brand.</h2>
         <p>
-          The buy box stays native to Horizon for safer cart and checkout behavior, while the sections below handle the
-          premium storytelling, reassurance, and supplier-review formatting that the product page needs after the first CTA.
+          The buy box stays native to Horizon for safer cart and checkout behavior. Everything below it exists to add
+          reassurance, product storytelling, and stronger dropshipping presentation without breaking the purchase flow.
         </p>
-      </div>
-
-      <div class="pista-nera-product-story__policy-grid">
-        <article class="pista-nera-product-story__policy-card">
-          <strong>Tracked shipping</strong>
-          <p>Estimated delivery window: 6 to 10 business days for the current launch configuration.</p>
-        </article>
-        <article class="pista-nera-product-story__policy-card">
-          <strong>30-day returns</strong>
-          <p>Unused items can be returned in original condition within the return period.</p>
-        </article>
-        <article class="pista-nera-product-story__policy-card">
-          <strong>Direct support</strong>
-          <p><a href="mailto:{{ support_email }}">{{ support_email }}</a> stays visible throughout the funnel.</p>
-        </article>
       </div>
     </div>
 
-    <div class="pista-nera-product-story__showcase">
+    <div class="pista-nera-product-story__showcase" data-pn-reveal>
       <div class="pista-nera-product-story__support">
         <p class="pista-nera-product-story__label">What it does</p>
         <h3>Quick pressure corrections without the bulk of a traditional car compressor.</h3>
         <p>
-          Air Forge is positioned as the upgrade from “emergency-only” inflators to something drivers actually want to keep
+          Air Forge is positioned as the upgrade from emergency-only inflators to something drivers actually want to keep
           within reach. It handles routine top-ups, low-pressure fixes, bicycles, motorcycles, and road-trip gear while
           still looking like a premium tool.
         </p>
@@ -58,7 +47,7 @@
         </ul>
       </div>
 
-      <figure class="pista-nera-product-story__media">
+      <figure class="pista-nera-product-story__media" data-pn-parallax>
         {% if showcase_media != blank and showcase_media.preview_image != blank %}
           {{
             showcase_media.preview_image
@@ -77,26 +66,50 @@
       </figure>
     </div>
 
-    <div class="pista-nera-product-story__grid">
-      <article class="pista-nera-product-story__card">
-        <strong>Mobile-first hierarchy</strong>
-        <p>The layout keeps title, stars, price, add to cart, and policy reassurance within a short scroll.</p>
+    <div class="pista-nera-product-story__dual" data-pn-reveal>
+      <article class="pista-nera-product-story__immersive-card" data-pn-parallax>
+        {% if secondary_media != blank and secondary_media.preview_image != blank %}
+          {{
+            secondary_media.preview_image
+            | image_url: width: 1400
+            | image_tag:
+              class: 'pista-nera-product-story__immersive-image',
+              loading: 'lazy',
+              widths: '480, 720, 960, 1200',
+              alt: secondary_media.alt | default: product.title
+          }}
+        {% endif %}
+        <div class="pista-nera-product-story__immersive-copy">
+          <p class="pista-nera-product-story__label">How it feels</p>
+          <strong>Utility-first, but still premium enough to justify a DTC price point.</strong>
+          <p>
+            The screen, LED, dark finish, and compact silhouette give the product enough visual character to support a
+            strong home page and a cleaner conversion story on the PDP.
+          </p>
+        </div>
       </article>
-      <article class="pista-nera-product-story__card">
-        <strong>Native cart behavior</strong>
-        <p>Cart drawer and sticky add to cart stay in the Horizon purchase flow instead of being rebuilt from scratch.</p>
-      </article>
-      <article class="pista-nera-product-story__card">
-        <strong>Real product record</strong>
-        <p>The page now inherits actual Shopify media, handle, price, and publication state instead of placeholder content.</p>
-      </article>
-      <article class="pista-nera-product-story__card">
-        <strong>Supplier-proofed interest</strong>
-        <p>We are styling around a product with 4.9 average rating and 3592 marketplace reviews as proof of demand.</p>
-      </article>
+
+      <div class="pista-nera-product-story__grid">
+        <article class="pista-nera-product-story__card">
+          <strong>Mobile-first hierarchy</strong>
+          <p>The layout keeps title, stars, price, add to cart, and policy reassurance within a short scroll.</p>
+        </article>
+        <article class="pista-nera-product-story__card">
+          <strong>Native cart behavior</strong>
+          <p>Cart drawer and sticky add to cart stay inside the Horizon purchase flow instead of being rebuilt from scratch.</p>
+        </article>
+        <article class="pista-nera-product-story__card">
+          <strong>Real product record</strong>
+          <p>The page now inherits actual Shopify media, handle, price, and publication state instead of placeholders.</p>
+        </article>
+        <article class="pista-nera-product-story__card">
+          <strong>Supplier-proofed interest</strong>
+          <p>Styled around a product with 4.9 average rating and 3592 marketplace reviews as proof of demand.</p>
+        </article>
+      </div>
     </div>
 
-    <div class="pista-nera-product-story__reviews">
+    <div class="pista-nera-product-story__reviews" data-pn-reveal>
       <div class="pista-nera-product-story__reviews-head">
         <p class="pista-nera-product-story__label">Supplier review preview</p>
         <h3>How the review block can look before importing more customer feedback.</h3>
@@ -104,32 +117,45 @@
 
       <div class="pista-nera-home__reviews">
         <article class="pista-nera-home__review">
-          <div class="pista-nera-home__stars">★★★★★</div>
-          <blockquote>“super”</blockquote>
+          <div class="pista-nera-home__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="pista-nera-home__review-title">Compact but legit</p>
+          <blockquote>"Super."</blockquote>
           <footer>AliExpress buyer / Jan 17, 2021</footer>
         </article>
         <article class="pista-nera-home__review">
-          <div class="pista-nera-home__stars">★★★★★</div>
-          <blockquote>
-            “Arrived in 3 days, well packed, feels quality, makes noise but that is normal for the power it needs.”
-          </blockquote>
+          <div class="pista-nera-home__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="pista-nera-home__review-title">Feels premium in hand</p>
+          <blockquote>"Arrived in 3 days, well packed, feels quality, makes noise but that is normal for the power it needs."</blockquote>
           <footer>AliExpress buyer / Jan 12, 2021</footer>
         </article>
         <article class="pista-nera-home__review">
-          <div class="pista-nera-home__stars">★★★★★</div>
-          <blockquote>“Portable size and premium finish make it easier to justify than a basic compressor.”</blockquote>
+          <div class="pista-nera-home__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="pista-nera-home__review-title">Worth keeping in the car</p>
+          <blockquote>"Portable size and premium finish make it easier to justify than a basic compressor."</blockquote>
+          <footer>Curated supplier sentiment</footer>
+        </article>
+        <article class="pista-nera-home__review">
+          <div class="pista-nera-home__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="pista-nera-home__review-title">Preset workflow sells it</p>
+          <blockquote>"The display and preset workflow make this much easier than older cable inflators."</blockquote>
+          <footer>Curated supplier sentiment</footer>
+        </article>
+        <article class="pista-nera-home__review">
+          <div class="pista-nera-home__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="pista-nera-home__review-title">Giftable accessory energy</p>
+          <blockquote>"This is the kind of car accessory that actually feels worth gifting."</blockquote>
           <footer>Curated supplier sentiment</footer>
         </article>
       </div>
     </div>
 
-    <div class="pista-nera-product-story__faq">
+    <div class="pista-nera-product-story__faq" data-pn-reveal>
       <details class="pista-nera-product-story__faq-item">
-        <summary>Does the PDP use the real Shopify product now?</summary>
-        <div>Yes. The product page is now backed by the real Air Forge product record created in Shopify admin.</div>
+        <summary>Does the PDP use the real Shopify product?</summary>
+        <div>Yes. The product page is backed by the real Air Forge product record created in Shopify admin.</div>
       </details>
       <details class="pista-nera-product-story__faq-item">
-        <summary>Why keep a separate storytelling section under the buy box?</summary>
+        <summary>Why keep the storytelling layer under the buy box?</summary>
         <div>It lets the store keep native purchase mechanics while still presenting the product like a premium launch brand.</div>
       </details>
       <details class="pista-nera-product-story__faq-item">
@@ -139,6 +165,8 @@
     </div>
   </div>
 </section>
+
+<script src="{{ 'pista-nera-motion.js' | asset_url }}" defer></script>
 
 {% schema %}
 {

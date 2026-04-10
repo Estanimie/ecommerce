@@ -109,7 +109,7 @@
                   "type": "text",
                   "name": "Launch label",
                   "settings": {
-                    "text": "<p>Pista Nera / launch product</p>",
+                    "text": "<p>Pista Nera / 10% launch offer</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -209,7 +209,7 @@
                   "type": "text",
                   "name": "Subcopy",
                   "settings": {
-                    "text": "<p>A cordless tire inflator designed to feel premium, store cleanly, and handle quick pressure corrections without the bulk of a traditional compressor.</p>",
+                    "text": "<p>A cordless tire inflator designed to feel premium, store cleanly, and handle fast pressure corrections without the visual clutter of a traditional compressor.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -282,7 +282,7 @@
                   "type": "text",
                   "name": "Benefits heading",
                   "settings": {
-                    "text": "<p><strong>Launch highlights</strong></p>",
+                    "text": "<p><strong>Why Air Forge sells</strong></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -308,7 +308,7 @@
                   "type": "text",
                   "name": "Benefits body",
                   "settings": {
-                    "text": "<ul><li>Wireless inflator with digital pressure targeting.</li><li>Compact body for cleaner storage in the cabin or trunk.</li><li>LED support for low-light roadside use.</li></ul>",
+                    "text": "<ul><li>Wireless inflator with digital pressure targeting.</li><li>Compact body for cleaner storage in the cabin or trunk.</li><li>LED support for low-light roadside use.</li><li>Better-looking product story than a generic emergency tool.</li></ul>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -382,32 +382,6 @@
               },
               "block_order": []
             },
-            "text_shipping_note": {
-              "type": "text",
-              "name": "Shipping note",
-              "settings": {
-                "text": "<p><strong>Shipping &amp; support:</strong> tracked delivery estimated in 6-10 business days, 30-day returns for unused items, and launch support at support@pistanera.com.</p>",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "0.95rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
             "text_description": {
               "type": "text",
               "name": "Product description",
@@ -437,11 +411,10 @@
           },
           "block_order": [
             "group_launch",
-            "group_benefits",
             "divider_main",
             "buy_buttons_main",
-            "text_shipping_note",
-            "text_description"
+            "text_description",
+            "group_benefits"
           ]
         }
       },
@@ -457,6 +430,14 @@
         "padding-block-end": 12
       }
     },
+    "pista_nera_product_policies": {
+      "type": "pista-nera-product-policies",
+      "settings": {
+        "support_email": "support@pistanera.com",
+        "padding-block-start": 0,
+        "padding-block-end": 24
+      }
+    },
     "pista_nera_product_story": {
       "type": "pista-nera-product-story",
       "settings": {
@@ -468,6 +449,7 @@
   },
   "order": [
     "main",
+    "pista_nera_product_policies",
     "pista_nera_product_story"
   ]
 }

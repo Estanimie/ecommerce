@@ -2150,3 +2150,465 @@ footer a {
     animation: none !important;
   }
 }
+
+/* Pista Nera v3 overrides */
+
+#header-component .account-button,
+#header-component [href*='/account'] {
+  display: none !important;
+}
+
+#header-component .header__row--top .header__columns {
+  align-items: center;
+}
+
+.header-logo__image--lockup {
+  width: 204px;
+  height: auto;
+}
+
+.pista-nera-desktop-nav {
+  gap: 30px;
+}
+
+.pista-nera-desktop-nav a,
+.pista-nera-mobile-nav__panel a {
+  position: relative;
+}
+
+.pista-nera-desktop-nav a::after,
+.pista-nera-mobile-nav__panel a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.35rem;
+  width: 100%;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: currentColor;
+  transition: transform 180ms ease;
+}
+
+.pista-nera-desktop-nav a:hover::after,
+.pista-nera-mobile-nav__panel a:hover::after {
+  transform: scaleX(1);
+}
+
+.pista-nera-mobile-nav__panel {
+  right: 0;
+  left: auto;
+}
+
+[data-pn-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 480ms ease,
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--pn-reveal-delay, 0ms);
+}
+
+[data-pn-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pista-nera-home--v3 {
+  gap: 84px;
+}
+
+.pista-nera-home__hero {
+  align-items: center;
+}
+
+.pista-nera-home__stage-card,
+.pista-nera-home__visual-card,
+.pista-nera-product-story__media,
+.pista-nera-product-story__immersive-card {
+  --pn-pointer-x: 50%;
+  --pn-pointer-y: 50%;
+  --pn-tilt-x: 0deg;
+  --pn-tilt-y: 0deg;
+}
+
+.pista-nera-home__stage-card {
+  min-height: 620px;
+  padding: 28px;
+  transform:
+    perspective(1400px)
+    rotateX(var(--pn-tilt-x))
+    rotateY(var(--pn-tilt-y));
+  transform-style: preserve-3d;
+  transition: transform 180ms ease;
+}
+
+.pista-nera-home__stage-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at var(--pn-pointer-x) var(--pn-pointer-y), rgba(243, 106, 24, 0.18), transparent 30%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.05), transparent 35%);
+  pointer-events: none;
+}
+
+.pista-nera-home__stage-led {
+  position: absolute;
+  top: 18%;
+  right: 24%;
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.36), rgba(243, 106, 24, 0.22) 45%, rgba(243, 106, 24, 0) 74%);
+  filter: blur(6px);
+  animation: pn-led 3.6s ease-in-out infinite;
+}
+
+.pista-nera-home__particle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(243, 106, 24, 0.45));
+  box-shadow: 0 0 20px rgba(243, 106, 24, 0.35);
+  animation: pn-particle 5.4s linear infinite;
+}
+
+.pista-nera-home__particle--one {
+  top: 20%;
+  left: 16%;
+}
+
+.pista-nera-home__particle--two {
+  top: 32%;
+  right: 14%;
+  animation-delay: 1s;
+}
+
+.pista-nera-home__particle--three {
+  bottom: 22%;
+  left: 24%;
+  animation-delay: 1.7s;
+}
+
+.pista-nera-home__particle--four {
+  bottom: 30%;
+  right: 20%;
+  animation-delay: 2.4s;
+}
+
+.pista-nera-home__stage-overlay {
+  position: absolute;
+  z-index: 3;
+  max-width: 180px;
+  padding: 0.9rem 0.95rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  backdrop-filter: blur(16px);
+}
+
+.pista-nera-home__stage-overlay strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.88rem;
+}
+
+.pista-nera-home__stage-overlay span {
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.pista-nera-home__stage-overlay--left {
+  top: 160px;
+  left: 16px;
+}
+
+.pista-nera-home__stage-overlay--right {
+  top: 210px;
+  right: 16px;
+}
+
+.pista-nera-home__hero-image {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 500px);
+  transform: translateY(10px);
+  filter: drop-shadow(0 40px 60px rgba(0, 0, 0, 0.46));
+}
+
+.pista-nera-home__use-band {
+  display: grid;
+  gap: 22px;
+}
+
+.pista-nera-home__use-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 16px;
+}
+
+.pista-nera-home__use-card,
+.pista-nera-home__insight-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--pn-line);
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: var(--pn-shadow-card);
+}
+
+.pista-nera-home__use-card {
+  min-height: 320px;
+}
+
+.pista-nera-home__use-card--wide {
+  grid-row: span 2;
+  min-height: 100%;
+}
+
+.pista-nera-home__use-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 260ms ease;
+}
+
+.pista-nera-home__use-card:hover .pista-nera-home__use-image {
+  transform: scale(1.04);
+}
+
+.pista-nera-home__use-copy {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  padding: 1rem;
+  border-radius: 20px;
+  background: rgba(10, 10, 10, 0.62);
+  color: #fff;
+  backdrop-filter: blur(14px);
+}
+
+.pista-nera-home__use-copy p,
+.pista-nera-home__use-copy strong {
+  color: #fff;
+}
+
+.pista-nera-home__insight-card {
+  display: grid;
+  gap: 0.55rem;
+  padding: 1.25rem 1.2rem;
+  align-content: start;
+}
+
+.pista-nera-home__insight-card span {
+  color: var(--pn-accent);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pista-nera-home__gallery-frame {
+  --pn-glow-x: 50%;
+  --pn-glow-y: 50%;
+  --pn-zoom: 1;
+}
+
+.pista-nera-home__gallery-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--pn-glow-x) var(--pn-glow-y), rgba(243, 106, 24, 0.22), transparent 32%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.pista-nera-home__gallery img {
+  transform: scale(var(--pn-zoom, 1));
+  transition: transform 320ms ease;
+}
+
+.pista-nera-home__review {
+  min-height: 100%;
+}
+
+.pista-nera-product-story__dual {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 18px;
+}
+
+.pista-nera-product-story__immersive-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 460px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, #111, #1a1a1a);
+}
+
+.pista-nera-product-story__immersive-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pista-nera-product-story__immersive-copy {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  padding: 1rem;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+}
+
+.pista-nera-product-story__reviews .pista-nera-home__reviews {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.pista-nera-product-policies {
+  display: grid;
+  gap: 12px;
+}
+
+main[data-template*='product'] .shopify-payment-button,
+main[data-template*='product'] .more-payment-options-link,
+main[data-template*='product'] quantity-selector-component,
+main[data-template*='product'] .quantity-selector-component {
+  display: none !important;
+}
+
+main[data-template*='product'] .buy-buttons-block {
+  gap: 0 !important;
+}
+
+@keyframes pn-led {
+  0%,
+  100% {
+    opacity: 0.62;
+    transform: scale(0.94);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes pn-particle {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.7);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(22px, -34px, 0) scale(1.15);
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .pista-nera-home__stage-card {
+    min-height: 560px;
+  }
+
+  .pista-nera-home__use-grid,
+  .pista-nera-product-story__dual,
+  .pista-nera-product-story__reviews .pista-nera-home__reviews {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 749px) {
+  #header-component .header__row--top .header__columns {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+
+  #header-component .header__column--center {
+    display: none;
+  }
+
+  #header-component .header__column--right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .header-logo__image--lockup {
+    width: 154px;
+  }
+
+  .pista-nera-mobile-nav__panel {
+    min-width: 210px;
+  }
+
+  .pista-nera-home--v3 {
+    gap: 64px;
+  }
+
+  .pista-nera-home__stage-card {
+    min-height: 500px;
+    padding: 18px;
+  }
+
+  .pista-nera-home__stage-overlay {
+    max-width: 132px;
+    padding: 0.7rem 0.75rem;
+  }
+
+  .pista-nera-home__stage-overlay--left {
+    top: 78px;
+    left: 12px;
+  }
+
+  .pista-nera-home__stage-overlay--right {
+    top: 128px;
+    right: 12px;
+  }
+
+  .pista-nera-home__use-grid,
+  .pista-nera-product-story__dual {
+    grid-template-columns: 1fr;
+  }
+
+  .pista-nera-product-story__reviews .pista-nera-home__reviews,
+  .pista-nera-home__reviews,
+  .pista-nera-home__gallery,
+  .pista-nera-home__hero-benefits {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 86%;
+    overflow-x: auto;
+    padding-bottom: 0.3rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .pista-nera-home__use-card {
+    min-height: 280px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-pn-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .pista-nera-home__stage-card,
+  .pista-nera-home__gallery img,
+  .pista-nera-home__use-image,
+  .pista-nera-product-story__immersive-card {
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

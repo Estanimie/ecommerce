@@ -9,6 +9,7 @@
     assign support_email = 'support@pistanera.com'
   endif
 
+  assign support_url = '/pages/contact'
   assign product_url = '#'
   if featured_product != blank
     assign product_url = featured_product.url
@@ -17,36 +18,42 @@
   assign hero_media = nil
   assign detail_media = nil
   assign lifestyle_media = nil
+  assign use_media = nil
+  assign showcase_media = nil
   assign gallery_count = 0
 
   if featured_product != blank
     assign hero_media = featured_product.featured_media
     assign detail_media = featured_product.media[1]
     assign lifestyle_media = featured_product.media[2]
+    assign use_media = featured_product.media[3]
+    assign showcase_media = featured_product.media[4]
   endif
 %}
 
 <div class="section-background color-scheme-1"></div>
 <section class="section section--page-width color-scheme-1">
   <div
-    class="pista-nera-home spacing-style"
+    class="pista-nera-home spacing-style pista-nera-home--v3"
     style="{% render 'spacing-style', settings: section.settings %}"
   >
     <div class="pista-nera-home__hero" id="pista-nera-home">
-      <div class="pista-nera-home__hero-copy">
+      <div class="pista-nera-home__hero-copy" data-pn-reveal>
         <p class="pista-nera-home__eyebrow">Pista Nera launch drop</p>
         <div class="pista-nera-home__sale-tag">10% off this week</div>
-        <h1 class="pista-nera-home__title">Air Forge</h1>
+        <h1 class="pista-nera-home__title">Air <span>Forge</span></h1>
         <p class="pista-nera-home__subtitle">Portable Tire Inflator</p>
         <p class="pista-nera-home__lede">
-          A compact wireless inflator designed for fast pressure corrections, cleaner trunk storage, and a product
+          A compact inflator for daily drivers who want fast pressure corrections, cleaner storage, and a product
           silhouette that feels premium on camera and in hand.
         </p>
+
         <ul class="pista-nera-home__hero-pills">
           <li>Auto-stop PSI</li>
           <li>USB-C recharge</li>
           <li>Night-ready LED</li>
         </ul>
+
         <div class="pista-nera-home__hero-metrics">
           <div>
             <strong>4.9</strong>
@@ -61,51 +68,70 @@
             <span>digital pressure support</span>
           </div>
         </div>
+
         <div class="pista-nera-home__cta">
           <a href="{{ product_url }}" class="button">Get yours</a>
           <a href="#air-forge-function" class="button-secondary">See it in action</a>
         </div>
       </div>
 
-      <div class="pista-nera-home__hero-stage">
-        <div class="pista-nera-home__stage-card">
+      <div class="pista-nera-home__hero-stage" data-pn-reveal>
+        <div class="pista-nera-home__stage-card" data-pn-parallax>
           <span class="pista-nera-home__pulse pista-nera-home__pulse--one"></span>
           <span class="pista-nera-home__pulse pista-nera-home__pulse--two"></span>
           <span class="pista-nera-home__pulse pista-nera-home__pulse--three"></span>
           <span class="pista-nera-home__airflow pista-nera-home__airflow--one"></span>
           <span class="pista-nera-home__airflow pista-nera-home__airflow--two"></span>
           <span class="pista-nera-home__airflow pista-nera-home__airflow--three"></span>
+          <span class="pista-nera-home__stage-led"></span>
+          <span class="pista-nera-home__particle pista-nera-home__particle--one"></span>
+          <span class="pista-nera-home__particle pista-nera-home__particle--two"></span>
+          <span class="pista-nera-home__particle pista-nera-home__particle--three"></span>
+          <span class="pista-nera-home__particle pista-nera-home__particle--four"></span>
           <span class="pista-nera-home__stage-tag pista-nera-home__stage-tag--left">AUTO STOP</span>
           <span class="pista-nera-home__stage-tag pista-nera-home__stage-tag--right">LED LIGHT</span>
+
           <div class="pista-nera-home__stage-gauge">
             <span>Preset live</span>
             <strong>36</strong>
             <small>PSI street mode</small>
           </div>
+
           <div class="pista-nera-home__stage-badge">CORDLESS</div>
+
+          <div class="pista-nera-home__stage-overlay pista-nera-home__stage-overlay--left">
+            <strong>Road-trip ready</strong>
+            <span>Fast top-ups without cable clutter.</span>
+          </div>
+          <div class="pista-nera-home__stage-overlay pista-nera-home__stage-overlay--right">
+            <strong>Launch pick</strong>
+            <span>Tool-grade utility with premium DTC framing.</span>
+          </div>
+
           {% if hero_media != blank and hero_media.preview_image != blank %}
             {{
               hero_media.preview_image
-              | image_url: width: 1400
+              | image_url: width: 1600
               | image_tag:
                 class: 'pista-nera-home__hero-image',
                 loading: 'eager',
-                widths: '480, 720, 960, 1200',
+                widths: '480, 720, 960, 1200, 1440',
                 alt: 'Air Forge portable tire inflator hero image'
             }}
           {% else %}
             {{ 'product-1' | placeholder_svg_tag: 'pista-nera-home__hero-placeholder' }}
           {% endif %}
+
           <div class="pista-nera-home__stage-floor"></div>
           <div class="pista-nera-home__stage-orbit">
-            <span>FAST TOP-UPS</span>
-            <span>CLEAN STORAGE</span>
-            <span>ROAD TRIP READY</span>
+            <span>Fast top-ups</span>
+            <span>Clean storage</span>
+            <span>Night visibility</span>
           </div>
         </div>
       </div>
 
-      <div class="pista-nera-home__hero-benefits">
+      <div class="pista-nera-home__hero-benefits" data-pn-reveal>
         <article class="pista-nera-home__benefit-card">
           <span>Portable</span>
           <strong>Compact enough for the glove setup.</strong>
@@ -119,42 +145,25 @@
         <article class="pista-nera-home__benefit-card">
           <span>Rechargeable</span>
           <strong>No messy cords in the cabin.</strong>
-          <p>Wireless use, digital presets, and a finish that fits the Pista Nera aesthetic from day one.</p>
+          <p>Wireless use, digital presets, and a finish that fits the Pista Nera visual language.</p>
         </article>
       </div>
     </div>
 
-    <div class="pista-nera-home__ticker" aria-label="Store announcements">
-      <div class="pista-nera-home__ticker-track">
-        <span>10% OFF AIR FORGE THIS WEEK</span>
-        <span>TRACKED SHIPPING</span>
-        <span>CORDLESS TIRE INFLATOR</span>
-        <span>FOR CARS, BIKES, AND MOTORCYCLES</span>
-        <span>PISTA NERA LAUNCH DROP</span>
-      </div>
-      <div class="pista-nera-home__ticker-track" aria-hidden="true">
-        <span>10% OFF AIR FORGE THIS WEEK</span>
-        <span>TRACKED SHIPPING</span>
-        <span>CORDLESS TIRE INFLATOR</span>
-        <span>FOR CARS, BIKES, AND MOTORCYCLES</span>
-        <span>PISTA NERA LAUNCH DROP</span>
-      </div>
-    </div>
-
-    <ul class="pista-nera-home__trust">
+    <ul class="pista-nera-home__trust" data-pn-reveal>
       <li><strong>Tracked shipping</strong><span>Estimated 6 to 10 business days for the current launch window.</span></li>
       <li><strong>30-day returns</strong><span>Unused items can be returned in original condition during the return window.</span></li>
       <li><strong>Support on standby</strong><span>Launch contact routed through {{ support_email }}.</span></li>
       <li><strong>Supplier-proven demand</strong><span>Backed by thousands of marketplace reviews before brand curation.</span></li>
     </ul>
 
-    <div class="pista-nera-home__split" id="air-forge-function">
+    <div class="pista-nera-home__split" id="air-forge-function" data-pn-reveal>
       <div class="pista-nera-home__section-head">
         <p class="pista-nera-home__section-label">Why this works</p>
         <h2>It solves a real driver problem and still looks premium enough to sell like a brand product.</h2>
         <p>
-          Air Forge is a better first SKU than a novelty accessory because the value is immediate: tire pressure, travel
-          convenience, low-light visibility, and a compact body that looks serious enough to justify a premium landing page.
+          Air Forge works as a first Pista Nera SKU because the value is immediate: tire pressure, travel convenience,
+          low-light visibility, and a compact body that looks serious enough to support a premium storefront.
         </p>
         <ul class="pista-nera-home__utility-list">
           <li>Fast enough for emergency top-ups and routine maintenance.</li>
@@ -163,7 +172,7 @@
         </ul>
       </div>
 
-      <div class="pista-nera-home__visual-card">
+      <div class="pista-nera-home__visual-card" data-pn-parallax>
         {% if detail_media != blank and detail_media.preview_image != blank %}
           {{
             detail_media.preview_image
@@ -192,10 +201,35 @@
       </div>
     </div>
 
-    <div>
+    <div class="pista-nera-home__steps-shell" data-pn-reveal>
+      <div class="pista-nera-home__section-head">
+        <p class="pista-nera-home__section-label">How it works</p>
+        <h2>A three-step workflow that reads well on mobile and feels believable for paid traffic.</h2>
+      </div>
+
+      <div class="pista-nera-home__steps">
+        <article class="pista-nera-home__step">
+          <span>01</span>
+          <strong>Set the PSI</strong>
+          <p>Use the digital controls to lock the target pressure before you start.</p>
+        </article>
+        <article class="pista-nera-home__step">
+          <span>02</span>
+          <strong>Connect and inflate</strong>
+          <p>Attach the hose, press start, and let the tool do the quick correction work.</p>
+        </article>
+        <article class="pista-nera-home__step">
+          <span>03</span>
+          <strong>Store it cleanly</strong>
+          <p>Put it back in the cabin or trunk setup without the bulk of a traditional compressor.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="pista-nera-home__feature-shell" data-pn-reveal>
       <div class="pista-nera-home__section-head">
         <p class="pista-nera-home__section-label">Feature stack</p>
-        <h2>Everything the home page needs to communicate in the first few swipes.</h2>
+        <h2>Everything the landing needs to communicate in the first few swipes.</h2>
       </div>
 
       <div class="pista-nera-home__features">
@@ -217,7 +251,7 @@
         <article class="pista-nera-home__feature">
           <span>04</span>
           <strong>Compact premium body</strong>
-          <p>Metal-forward shape and dark finish read far better than generic emergency tools on mobile.</p>
+          <p>Dark finish and metal-forward form read far better than generic emergency tools on mobile.</p>
         </article>
         <article class="pista-nera-home__feature">
           <span>05</span>
@@ -227,10 +261,10 @@
       </div>
     </div>
 
-    <div id="pista-nera-gallery">
+    <div id="pista-nera-gallery" data-pn-reveal>
       <div class="pista-nera-home__section-head">
         <p class="pista-nera-home__section-label">Interactive gallery</p>
-        <h2>Supplier-first media, re-framed as a premium DTC launch.</h2>
+        <h2>Supplier-first media, reframed as a premium DTC launch.</h2>
       </div>
       <div class="pista-nera-home__gallery">
         {% if featured_product != blank %}
@@ -247,7 +281,7 @@
                     assign gallery_note = 'Dark finish and compact proportions that feel more premium than a tool listing.'
                   when 2
                     assign gallery_label = 'Preset pressure workflow'
-                    assign gallery_note = 'The digital screen becomes part of the product story, not just a utility detail.'
+                    assign gallery_note = 'The display becomes part of the product story, not just a utility detail.'
                   when 3
                     assign gallery_label = 'Night-drive support'
                     assign gallery_note = 'LED assist makes low-light corrections feel deliberate instead of stressful.'
@@ -263,7 +297,7 @@
                 endcase
               %}
               <figure>
-                <div class="pista-nera-home__gallery-frame">
+                <div class="pista-nera-home__gallery-frame" data-pn-gallery-frame>
                   {{
                     media.preview_image
                     | image_url: width: 1200
@@ -285,25 +319,70 @@
       </div>
     </div>
 
-    <div class="pista-nera-home__steps">
-      <article class="pista-nera-home__step">
-        <span>01</span>
-        <strong>Set the PSI</strong>
-        <p>Use the digital controls to lock the target pressure before you start.</p>
-      </article>
-      <article class="pista-nera-home__step">
-        <span>02</span>
-        <strong>Connect and inflate</strong>
-        <p>Attach the hose, press start, and let the tool do the quick correction work.</p>
-      </article>
-      <article class="pista-nera-home__step">
-        <span>03</span>
-        <strong>Store it cleanly</strong>
-        <p>Put it back in the cabin or trunk setup without the bulk of a traditional compressor.</p>
-      </article>
+    <div class="pista-nera-home__use-band" data-pn-reveal>
+      <div class="pista-nera-home__section-head">
+        <p class="pista-nera-home__section-label">In use</p>
+        <h2>The product story needs context, not just catalog photos.</h2>
+      </div>
+
+      <div class="pista-nera-home__use-grid">
+        <article class="pista-nera-home__use-card pista-nera-home__use-card--wide" data-pn-parallax>
+          {% if use_media != blank and use_media.preview_image != blank %}
+            {{
+              use_media.preview_image
+              | image_url: width: 1400
+              | image_tag:
+                class: 'pista-nera-home__use-image',
+                loading: 'lazy',
+                widths: '480, 720, 960, 1200',
+                alt: use_media.alt | default: featured_product.title
+            }}
+          {% elsif lifestyle_media != blank and lifestyle_media.preview_image != blank %}
+            {{
+              lifestyle_media.preview_image
+              | image_url: width: 1400
+              | image_tag:
+                class: 'pista-nera-home__use-image',
+                loading: 'lazy',
+                widths: '480, 720, 960, 1200',
+                alt: lifestyle_media.alt | default: featured_product.title
+            }}
+          {% endif %}
+          <div class="pista-nera-home__use-copy">
+            <strong>Built for quick corrections, not just emergency drama.</strong>
+            <p>That framing makes the page stronger for dropshipping because it sells everyday utility, not panic.</p>
+          </div>
+        </article>
+
+        <article class="pista-nera-home__insight-card">
+          <span>Launch angle</span>
+          <strong>Useful enough to buy, polished enough to gift.</strong>
+          <p>The design language gives the landing page something more premium to work with than a novelty accessory.</p>
+        </article>
+
+        <article class="pista-nera-home__insight-card">
+          <span>Creative angle</span>
+          <strong>LED, airflow, screen, and dark finish all read well in paid creative.</strong>
+          <p>That matters because your first campaigns will depend on quick visual comprehension in mobile feeds.</p>
+        </article>
+
+        <article class="pista-nera-home__use-card">
+          {% if showcase_media != blank and showcase_media.preview_image != blank %}
+            {{
+              showcase_media.preview_image
+              | image_url: width: 1000
+              | image_tag:
+                class: 'pista-nera-home__use-image',
+                loading: 'lazy',
+                widths: '320, 480, 720, 960',
+                alt: showcase_media.alt | default: featured_product.title
+            }}
+          {% endif %}
+        </article>
+      </div>
     </div>
 
-    <div class="pista-nera-home__compare">
+    <div class="pista-nera-home__compare" data-pn-reveal>
       <div class="pista-nera-home__compare-card pista-nera-home__compare-card--brand">
         <strong>Pista Nera / Air Forge</strong>
         <ul class="pista-nera-home__utility-list">
@@ -324,11 +403,11 @@
       </div>
     </div>
 
-    <div id="air-forge-reviews">
+    <div id="air-forge-reviews" data-pn-reveal>
       <div class="pista-nera-home__section-head">
         <p class="pista-nera-home__section-label">Review preview</p>
         <h2>Styled like a real brand layer, still anchored in supplier demand signals.</h2>
-        <p>Five preview cards to frame how marketplace proof can look once it is curated for a one-product storefront.</p>
+        <p>Five editorial cards to show how marketplace proof can look once it is curated for a single-product store.</p>
       </div>
 
       <div class="pista-nera-home__reviews">
@@ -365,7 +444,7 @@
       </div>
     </div>
 
-    <div class="pista-nera-home__faq">
+    <div class="pista-nera-home__faq" data-pn-reveal>
       <details class="pista-nera-home__faq-item">
         <summary>Is the product page where checkout happens?</summary>
         <div>Yes. The home landing stays editorial while the real product page handles price, cart, and checkout.</div>
@@ -384,13 +463,13 @@
       </details>
     </div>
 
-    <div class="pista-nera-home__support-card">
+    <div class="pista-nera-home__support-card" data-pn-reveal>
       <div>
         <p class="pista-nera-home__section-label">Final CTA</p>
         <strong>Ready to move from landing page to product page.</strong>
         <p>
-          The product now exists in Shopify, the home is built to route directly to it, and the rest of the experience
-          can stay focused on turning mobile traffic into a clean add-to-cart flow.
+          The product already exists in Shopify, the landing now sells the visual promise, and the PDP carries the real
+          add-to-cart flow without breaking the native Horizon mechanics.
         </p>
       </div>
 
@@ -408,11 +487,13 @@
 
       <div class="pista-nera-home__cta">
         <a href="{{ product_url }}" class="button">Shop Air Forge</a>
-        <a href="mailto:{{ support_email }}" class="button-secondary">Contact support</a>
+        <a href="{{ support_url }}" class="button-secondary">Contact support</a>
       </div>
     </div>
   </div>
 </section>
+
+<script src="{{ 'pista-nera-motion.js' | asset_url }}" defer></script>
 
 {% schema %}
 {

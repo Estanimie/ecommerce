@@ -1,0 +1,67 @@
+{% liquid
+  assign support_email = section.settings.support_email
+  if support_email == blank
+    assign support_email = 'support@pistanera.com'
+  endif
+
+  assign support_url = '/pages/contact'
+%}
+
+<div class="section-background color-scheme-1"></div>
+<section class="section section--page-width color-scheme-1">
+  <div
+    class="pista-nera-product-policies spacing-style"
+    style="{% render 'spacing-style', settings: section.settings %}"
+    data-pn-reveal
+  >
+    <div class="pista-nera-product-story__policy-grid">
+      <article class="pista-nera-product-story__policy-card">
+        <strong>Tracked shipping</strong>
+        <p>Estimated delivery window: 6 to 10 business days for the current launch configuration.</p>
+      </article>
+      <article class="pista-nera-product-story__policy-card">
+        <strong>30-day returns</strong>
+        <p>Unused items can be returned in original condition within the return period.</p>
+      </article>
+      <article class="pista-nera-product-story__policy-card">
+        <strong>Direct support</strong>
+        <p><a href="{{ support_url }}">Contact Pista Nera support</a> or email {{ support_email }}.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Pista Nera Policies",
+  "settings": [
+    {
+      "type": "text",
+      "id": "support_email",
+      "label": "Support email",
+      "default": "support@pistanera.com"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 28
+    }
+  ],
+  "presets": []
+}
+{% endschema %}
