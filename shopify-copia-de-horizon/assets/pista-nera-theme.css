@@ -1746,3 +1746,407 @@ footer a {
     transition: none !important;
   }
 }
+
+.pista-nera-home__hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pista-nera-home__hero-pills li {
+  padding: 0.62rem 0.9rem 0.58rem;
+  border: 1px solid rgba(243, 106, 24, 0.16);
+  border-radius: 999px;
+  background: rgba(243, 106, 24, 0.08);
+  color: var(--pn-ink);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pista-nera-home__stage-card {
+  isolation: isolate;
+}
+
+.pista-nera-home__stage-card::before {
+  content: '';
+  position: absolute;
+  inset: auto 12% 9% 12%;
+  height: 16px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(243, 106, 24, 0.55), rgba(243, 106, 24, 0));
+  filter: blur(14px);
+  z-index: 0;
+}
+
+.pista-nera-home__stage-tag {
+  position: absolute;
+  z-index: 3;
+  padding: 0.65rem 0.8rem 0.58rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+
+.pista-nera-home__stage-tag--left {
+  top: 84px;
+  left: 18px;
+}
+
+.pista-nera-home__stage-tag--right {
+  right: 18px;
+  top: 132px;
+}
+
+.pista-nera-home__stage-gauge {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  z-index: 3;
+  display: grid;
+  gap: 0.2rem;
+  min-width: 140px;
+  padding: 0.95rem 1rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  background: rgba(7, 7, 7, 0.56);
+  color: #fff;
+  backdrop-filter: blur(16px);
+}
+
+.pista-nera-home__stage-gauge span,
+.pista-nera-home__stage-gauge small {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.pista-nera-home__stage-gauge span {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.pista-nera-home__stage-gauge strong {
+  font-size: 2.2rem;
+  line-height: 0.92;
+}
+
+.pista-nera-home__stage-gauge small {
+  font-size: 0.76rem;
+}
+
+.pista-nera-home__stage-floor {
+  position: absolute;
+  left: 50%;
+  bottom: 34px;
+  z-index: 1;
+  width: min(82%, 360px);
+  height: 42px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(243, 106, 24, 0.5), rgba(243, 106, 24, 0.08) 48%, rgba(243, 106, 24, 0) 72%);
+  filter: blur(10px);
+}
+
+.pista-nera-home__stage-orbit {
+  position: absolute;
+  right: 18px;
+  bottom: 22px;
+  z-index: 3;
+  display: grid;
+  gap: 0.55rem;
+  justify-items: end;
+}
+
+.pista-nera-home__stage-orbit span {
+  padding: 0.55rem 0.72rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pista-nera-home__hero-image {
+  animation: pn-float 4.8s ease-in-out infinite;
+}
+
+.pista-nera-home__ticker {
+  display: flex;
+  gap: 1.25rem;
+  overflow: hidden;
+  padding: 1rem 0;
+  border-top: 1px solid var(--pn-line);
+  border-bottom: 1px solid var(--pn-line);
+}
+
+.pista-nera-home__ticker-track {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  min-width: max-content;
+  animation: pn-ticker 26s linear infinite;
+}
+
+.pista-nera-home__ticker-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  color: var(--pn-ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.pista-nera-home__ticker-track span::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--pn-accent);
+}
+
+.pista-nera-home__gallery {
+  align-items: stretch;
+}
+
+.pista-nera-home__gallery figure {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+
+.pista-nera-home__gallery-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.pista-nera-home__gallery-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0) 35%, rgba(10, 10, 10, 0.56) 100%);
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.pista-nera-home__gallery-chip {
+  position: absolute;
+  left: 0.9rem;
+  bottom: 0.9rem;
+  z-index: 1;
+  padding: 0.5rem 0.72rem 0.46rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+
+.pista-nera-home__gallery figcaption {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.pista-nera-home__gallery figcaption strong {
+  font-size: 0.96rem;
+  line-height: 1.2;
+}
+
+.pista-nera-home__gallery figcaption span {
+  color: var(--pn-muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.pista-nera-home__review-title {
+  margin: 0 0 0.45rem;
+  color: var(--pn-ink);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.pista-nera-home__review {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.pista-nera-home__review blockquote {
+  margin: 0;
+}
+
+.pista-nera-home__review footer {
+  margin-top: 0.5rem;
+}
+
+@keyframes pn-float {
+  0%,
+  100% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes pn-ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 1.25rem));
+  }
+}
+
+@media screen and (max-width: 749px) {
+  #header-component .header__row--top .header__columns {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 6px;
+  }
+
+  #header-component .header__column--center {
+    justify-content: flex-end;
+  }
+
+  #header-component .header__column--right {
+    gap: 0;
+  }
+
+  .header-logo__image--wordmark {
+    width: 108px;
+  }
+
+  .pista-nera-mobile-nav__panel {
+    left: auto;
+    right: 0;
+    min-width: 200px;
+    padding: 16px;
+  }
+
+  .search-action button,
+  .header-actions__action,
+  .pista-nera-mobile-nav__trigger {
+    width: 34px;
+    height: 34px;
+    background: rgba(255, 255, 255, 0.94);
+  }
+
+  .pista-nera-home__hero {
+    gap: 18px;
+  }
+
+  .pista-nera-home__hero-copy {
+    gap: 14px;
+  }
+
+  .pista-nera-home__hero-stage {
+    order: 2;
+  }
+
+  .pista-nera-home__hero-benefits {
+    order: 3;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 82%;
+    overflow-x: auto;
+    padding-bottom: 0.3rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .pista-nera-home__benefit-card,
+  .pista-nera-home__gallery figure,
+  .pista-nera-home__review {
+    scroll-snap-align: start;
+  }
+
+  .pista-nera-home__stage-card {
+    min-height: 460px;
+    padding-top: 54px;
+  }
+
+  .pista-nera-home__stage-tag {
+    padding-inline: 0.62rem;
+    font-size: 0.64rem;
+  }
+
+  .pista-nera-home__stage-tag--left {
+    top: 18px;
+    left: 14px;
+  }
+
+  .pista-nera-home__stage-tag--right {
+    top: 18px;
+    right: 14px;
+  }
+
+  .pista-nera-home__stage-gauge {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    min-width: 0;
+  }
+
+  .pista-nera-home__stage-orbit {
+    right: 14px;
+    bottom: 102px;
+  }
+
+  .pista-nera-home__hero-pills {
+    gap: 0.5rem;
+  }
+
+  .pista-nera-home__hero-pills li {
+    font-size: 0.7rem;
+  }
+
+  .pista-nera-home__ticker {
+    padding-block: 0.9rem;
+  }
+
+  .pista-nera-home__ticker-track {
+    gap: 1rem;
+  }
+
+  .pista-nera-home__ticker-track span {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+  }
+
+  .pista-nera-home__gallery,
+  .pista-nera-home__reviews {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 86%;
+    overflow-x: auto;
+    padding-bottom: 0.3rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .pista-nera-home__gallery::-webkit-scrollbar,
+  .pista-nera-home__reviews::-webkit-scrollbar,
+  .pista-nera-home__hero-benefits::-webkit-scrollbar {
+    height: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pista-nera-home__hero-image,
+  .pista-nera-home__ticker-track {
+    animation: none !important;
+  }
+}

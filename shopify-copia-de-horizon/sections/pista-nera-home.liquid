@@ -42,6 +42,11 @@
           A compact wireless inflator designed for fast pressure corrections, cleaner trunk storage, and a product
           silhouette that feels premium on camera and in hand.
         </p>
+        <ul class="pista-nera-home__hero-pills">
+          <li>Auto-stop PSI</li>
+          <li>USB-C recharge</li>
+          <li>Night-ready LED</li>
+        </ul>
         <div class="pista-nera-home__hero-metrics">
           <div>
             <strong>4.9</strong>
@@ -70,6 +75,13 @@
           <span class="pista-nera-home__airflow pista-nera-home__airflow--one"></span>
           <span class="pista-nera-home__airflow pista-nera-home__airflow--two"></span>
           <span class="pista-nera-home__airflow pista-nera-home__airflow--three"></span>
+          <span class="pista-nera-home__stage-tag pista-nera-home__stage-tag--left">AUTO STOP</span>
+          <span class="pista-nera-home__stage-tag pista-nera-home__stage-tag--right">LED LIGHT</span>
+          <div class="pista-nera-home__stage-gauge">
+            <span>Preset live</span>
+            <strong>36</strong>
+            <small>PSI street mode</small>
+          </div>
           <div class="pista-nera-home__stage-badge">CORDLESS</div>
           {% if hero_media != blank and hero_media.preview_image != blank %}
             {{
@@ -84,6 +96,12 @@
           {% else %}
             {{ 'product-1' | placeholder_svg_tag: 'pista-nera-home__hero-placeholder' }}
           {% endif %}
+          <div class="pista-nera-home__stage-floor"></div>
+          <div class="pista-nera-home__stage-orbit">
+            <span>FAST TOP-UPS</span>
+            <span>CLEAN STORAGE</span>
+            <span>ROAD TRIP READY</span>
+          </div>
         </div>
       </div>
 
@@ -106,12 +124,21 @@
       </div>
     </div>
 
-    <div class="pista-nera-home__ticker-note">
-      <span>LIMITED DROP</span>
-      <span>10% OFF</span>
-      <span>TRACKED SHIPPING</span>
-      <span>CORDLESS TIRE INFLATOR</span>
-      <span>READY FOR CARS, BIKES, MOTORCYCLES</span>
+    <div class="pista-nera-home__ticker" aria-label="Store announcements">
+      <div class="pista-nera-home__ticker-track">
+        <span>10% OFF AIR FORGE THIS WEEK</span>
+        <span>TRACKED SHIPPING</span>
+        <span>CORDLESS TIRE INFLATOR</span>
+        <span>FOR CARS, BIKES, AND MOTORCYCLES</span>
+        <span>PISTA NERA LAUNCH DROP</span>
+      </div>
+      <div class="pista-nera-home__ticker-track" aria-hidden="true">
+        <span>10% OFF AIR FORGE THIS WEEK</span>
+        <span>TRACKED SHIPPING</span>
+        <span>CORDLESS TIRE INFLATOR</span>
+        <span>FOR CARS, BIKES, AND MOTORCYCLES</span>
+        <span>PISTA NERA LAUNCH DROP</span>
+      </div>
     </div>
 
     <ul class="pista-nera-home__trust">
@@ -210,16 +237,47 @@
           {% for media in featured_product.media limit: 6 %}
             {% if media.preview_image != blank %}
               {% assign gallery_count = gallery_count | plus: 1 %}
+              {% liquid
+                assign gallery_label = 'Air Forge visual'
+                assign gallery_note = 'A closer look at the product finish and fit.'
+
+                case forloop.index
+                  when 1
+                    assign gallery_label = 'Console-ready body'
+                    assign gallery_note = 'Dark finish and compact proportions that feel more premium than a tool listing.'
+                  when 2
+                    assign gallery_label = 'Preset pressure workflow'
+                    assign gallery_note = 'The digital screen becomes part of the product story, not just a utility detail.'
+                  when 3
+                    assign gallery_label = 'Night-drive support'
+                    assign gallery_note = 'LED assist makes low-light corrections feel deliberate instead of stressful.'
+                  when 4
+                    assign gallery_label = 'Road trip backup'
+                    assign gallery_note = 'A practical glove-box add-on that still looks giftable in creative.'
+                  when 5
+                    assign gallery_label = 'Quick top-up mode'
+                    assign gallery_note = 'Made for fast corrections, not bulky garage-only storage.'
+                  when 6
+                    assign gallery_label = 'Everyday carry setup'
+                    assign gallery_note = 'Clean enough to keep visible in the cabin without feeling like emergency clutter.'
+                endcase
+              %}
               <figure>
-                {{
-                  media.preview_image
-                  | image_url: width: 1200
-                  | image_tag:
-                    loading: 'lazy',
-                    widths: '320, 480, 720, 960',
-                    alt: media.alt | default: featured_product.title
-                }}
-                <figcaption>Air Forge visual {{ gallery_count }}</figcaption>
+                <div class="pista-nera-home__gallery-frame">
+                  {{
+                    media.preview_image
+                    | image_url: width: 1200
+                    | image_tag:
+                      loading: 'lazy',
+                      widths: '320, 480, 720, 960',
+                      alt: media.alt | default: featured_product.title
+                  }}
+                  <span class="pista-nera-home__gallery-chip">{{ gallery_label }}</span>
+                </div>
+                <figcaption>
+                  <strong>{{ gallery_label }}</strong>
+                  <span>{{ gallery_note }}</span>
+                </figcaption>
               </figure>
             {% endif %}
           {% endfor %}
@@ -269,35 +327,39 @@
     <div id="air-forge-reviews">
       <div class="pista-nera-home__section-head">
         <p class="pista-nera-home__section-label">Review preview</p>
-        <h2>Styled to look like a store, grounded in supplier feedback.</h2>
+        <h2>Styled like a real brand layer, still anchored in supplier demand signals.</h2>
+        <p>Five preview cards to frame how marketplace proof can look once it is curated for a one-product storefront.</p>
       </div>
 
       <div class="pista-nera-home__reviews">
         <article class="pista-nera-home__review">
-          <div class="pista-nera-home__stars">★★★★★</div>
-          <blockquote>“super”</blockquote>
+          <div class="pista-nera-home__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="pista-nera-home__review-title">Compact but legit</p>
+          <blockquote>"Super."</blockquote>
           <footer>AliExpress buyer / Jan 17, 2021</footer>
         </article>
         <article class="pista-nera-home__review">
-          <div class="pista-nera-home__stars">★★★★★</div>
-          <blockquote>
-            “Arrived in 3 days, well packed, feels quality, makes noise but that is normal for the power it needs.”
-          </blockquote>
+          <div class="pista-nera-home__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="pista-nera-home__review-title">Feels premium in hand</p>
+          <blockquote>"Arrived in 3 days, well packed, feels quality, makes noise but that is normal for the power it needs."</blockquote>
           <footer>AliExpress buyer / Jan 12, 2021</footer>
         </article>
         <article class="pista-nera-home__review">
-          <div class="pista-nera-home__stars">★★★★★</div>
-          <blockquote>“Small enough to keep in the car, strong enough that it does not feel like a toy.”</blockquote>
+          <div class="pista-nera-home__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="pista-nera-home__review-title">Actually worth keeping in the car</p>
+          <blockquote>"Small enough to keep in the car, strong enough that it does not feel like a toy."</blockquote>
           <footer>Curated supplier sentiment</footer>
         </article>
         <article class="pista-nera-home__review">
-          <div class="pista-nera-home__stars">★★★★★</div>
-          <blockquote>“The display and preset workflow make this much easier than older cable inflators.”</blockquote>
+          <div class="pista-nera-home__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="pista-nera-home__review-title">Preset workflow is the hook</p>
+          <blockquote>"The display and preset workflow make this much easier than older cable inflators."</blockquote>
           <footer>Curated supplier sentiment</footer>
         </article>
         <article class="pista-nera-home__review">
-          <div class="pista-nera-home__stars">★★★★★</div>
-          <blockquote>“This is the kind of car accessory that actually feels worth gifting.”</blockquote>
+          <div class="pista-nera-home__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="pista-nera-home__review-title">Giftable accessory energy</p>
+          <blockquote>"This is the kind of car accessory that actually feels worth gifting."</blockquote>
           <footer>Curated supplier sentiment</footer>
         </article>
       </div>
