@@ -3,31 +3,27 @@
   if support_email == blank
     assign support_email = 'support@pistanera.com'
   endif
-
-  assign support_url = '/pages/contact'
 %}
 
 <div class="section-background color-scheme-1"></div>
 <section class="section section--page-width color-scheme-1">
   <div
-    class="pista-nera-product-policies spacing-style"
+    class="pista-nera-product-policies pn-pdp-policies spacing-style"
     style="{% render 'spacing-style', settings: section.settings %}"
     data-pn-reveal
   >
-    <div class="pista-nera-product-story__policy-grid">
-      <article class="pista-nera-product-story__policy-card">
-        <strong>Tracked shipping</strong>
-        <p>Estimated delivery window: 6 to 10 business days for the current launch configuration.</p>
-      </article>
-      <article class="pista-nera-product-story__policy-card">
-        <strong>30-day returns</strong>
-        <p>Unused items can be returned in original condition within the return period.</p>
-      </article>
-      <article class="pista-nera-product-story__policy-card">
-        <strong>Direct support</strong>
-        <p><a href="{{ support_url }}">Contact Pista Nera support</a> or email {{ support_email }}.</p>
-      </article>
-    </div>
+    <article class="pn-pdp-policies__card">
+      <strong>Free tracked shipping</strong>
+      <p>Estimated delivery in 6-12 business days for the current batch.</p>
+    </article>
+    <article class="pn-pdp-policies__card">
+      <strong>30-day money-back guarantee</strong>
+      <p>If it arrives damaged or you change your mind, contact us within 30 days.</p>
+    </article>
+    <article class="pn-pdp-policies__card">
+      <strong>Secure checkout and support</strong>
+      <p>Checkout is protected by Shopify. Questions? Email {{ support_email }}.</p>
+    </article>
   </div>
 </section>
 

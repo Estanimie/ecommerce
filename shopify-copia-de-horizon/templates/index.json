@@ -6,13 +6,127 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "pista_nera_home": {
       "type": "pista-nera-home",
+      "blocks": {
+        "benefit_pressure": {
+          "type": "benefit",
+          "settings": {
+            "icon": "gauge",
+            "title": "Fast pressure top-ups",
+            "body": "Handle low tire pressure in minutes instead of searching for a working air pump."
+          }
+        },
+        "benefit_auto_stop": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shield",
+            "title": "Set the PSI and let it stop",
+            "body": "Choose the target pressure and avoid overfilling or second-guessing on the roadside."
+          }
+        },
+        "benefit_cordless": {
+          "type": "benefit",
+          "settings": {
+            "icon": "bolt",
+            "title": "Cordless and compact",
+            "body": "Keep it in the trunk, glove box, or back seat without cable clutter."
+          }
+        },
+        "benefit_led": {
+          "type": "benefit",
+          "settings": {
+            "icon": "lamp",
+            "title": "Useful in low light",
+            "body": "The built-in light helps with late-night pressure checks, garages, and shoulder stops."
+          }
+        },
+        "step_set": {
+          "type": "step",
+          "settings": {
+            "title": "Set your target PSI",
+            "body": "Pick the pressure you want before you start."
+          }
+        },
+        "step_attach": {
+          "type": "step",
+          "settings": {
+            "title": "Attach and press start",
+            "body": "Connect the hose to the tire valve and let Air Forge do the work."
+          }
+        },
+        "step_store": {
+          "type": "step",
+          "settings": {
+            "title": "Auto-stop and store it",
+            "body": "Once it reaches the target pressure, put it back in the car for the next time."
+          }
+        },
+        "review_one": {
+          "type": "review",
+          "settings": {
+            "title": "Way better than gas-station stops",
+            "body": "I keep it in the trunk and use it any time the tire warning comes on. It is faster and less annoying than hunting for air when I am already late.",
+            "author": "Verified customer"
+          }
+        },
+        "review_two": {
+          "type": "review",
+          "settings": {
+            "title": "Easy enough for anyone in the car",
+            "body": "Set the PSI, hit start, and it handles the rest. That auto-stop feature was the reason I bought it.",
+            "author": "Verified customer"
+          }
+        },
+        "review_three": {
+          "type": "review",
+          "settings": {
+            "title": "Actually small enough to leave in the car",
+            "body": "I wanted something compact, not a huge compressor with wires everywhere. This feels much cleaner and easier to store.",
+            "author": "Verified customer"
+          }
+        },
+        "review_four": {
+          "type": "review",
+          "settings": {
+            "title": "Perfect for road trips",
+            "body": "One of those products you hope you do not need often, but when you do, you are glad it is already in the car.",
+            "author": "Verified customer"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_pressure",
+        "benefit_auto_stop",
+        "benefit_cordless",
+        "benefit_led",
+        "step_set",
+        "step_attach",
+        "step_store",
+        "review_one",
+        "review_two",
+        "review_three",
+        "review_four"
+      ],
       "settings": {
         "featured_product": "air-forge-portable-tire-inflator",
         "support_email": "support@pistanera.com",
+        "hero_badge": "10% OFF THIS WEEK",
+        "hero_headline": "Inflate Your Tires in Minutes Without Cords or Gas Station Stops",
+        "hero_subheadline": "Air Forge gives everyday drivers a fast, compact way to handle low-pressure warnings before they ruin the day.",
+        "cta_label": "Buy Now",
+        "problem_heading": "Low tire pressure always shows up at the worst possible time.",
+        "problem_body": "Instead of searching for a working air pump or keeping a bulky compressor in the trunk, keep one compact inflator ready for commutes, school runs, and road trips.",
+        "offer_badge": "Launch offer",
+        "offer_heading": "Get Air Forge now with free tracked shipping.",
+        "offer_body": "Today the offer is $79.99 instead of $99.99, backed by a 30-day money-back guarantee and a simple one-product checkout.",
+        "guarantee_heading": "A simple guarantee that removes hesitation",
+        "guarantee_body": "Try Air Forge for 30 days. If it arrives defective, or if it is unused and not the right fit, contact support and we will guide the return process.",
+        "final_heading": "Keep one in the car and stop relying on random gas-station pumps.",
+        "final_body": "Tap through to the product page, review the details, and order from the live buy flow with tracked shipping and secure checkout.",
         "padding-block-start": 24,
         "padding-block-end": 72
       }

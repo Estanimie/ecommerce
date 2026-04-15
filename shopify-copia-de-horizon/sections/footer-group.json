@@ -17,7 +17,7 @@
         "text_brand": {
           "type": "text",
           "settings": {
-            "text": "<h4>Pista Nera</h4><p>Premium automotive accessories built around clean utility, restrained racing cues, and mobile-first conversion.</p><p><a href=\"/pages/about-pista-nera\">About Pista Nera</a><br><a href=\"/pages/contact\">Contact</a></p>",
+            "text": "<h4>Pista Nera</h4><p>One product, one job: help drivers fix low tire pressure quickly without cords, gas-station stops, or bulky gear.</p><p><a href=\"/pages/about-pista-nera\">About</a><br><a href=\"/pages/contact\">Contact</a></p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "left",
@@ -42,7 +42,7 @@
         "text_support": {
           "type": "text",
           "settings": {
-            "text": "<h4>Shop &amp; Support</h4><p><a href=\"/products/air-forge-portable-tire-inflator\">Shop Air Forge</a><br><a href=\"/pages/contact\">Contact support</a><br><a href=\"/pages/shipping-policy\">Shipping policy</a><br><a href=\"/pages/return-policy\">Returns &amp; refunds</a></p>",
+            "text": "<h4>Support</h4><p><a href=\"/products/air-forge-portable-tire-inflator\">Buy Air Forge</a><br><a href=\"/pages/contact\">Contact support</a><br><a href=\"/pages/shipping-policy\">Shipping</a><br><a href=\"/pages/return-policy\">Returns</a></p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "left",
@@ -67,7 +67,7 @@
         "text_legal": {
           "type": "text",
           "settings": {
-            "text": "<h4>Legal</h4><p><a href=\"/pages/privacy-policy\">Privacy Policy</a><br><a href=\"/pages/terms-of-service\">Terms of Service</a><br><a href=\"/pages/shipping-policy\">Shipping Policy</a><br><a href=\"/pages/return-policy\">Returns Policy</a></p>",
+            "text": "<h4>Legal</h4><p><a href=\"/pages/privacy-policy\">Privacy Policy</a><br><a href=\"/pages/terms-of-service\">Terms of Service</a><br><a href=\"/pages/shipping-policy\">Shipping Policy</a><br><a href=\"/pages/return-policy\">Return Policy</a></p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "left",
@@ -88,38 +88,12 @@
             "padding-inline-end": 0
           },
           "blocks": {}
-        },
-        "email_signup_launch": {
-          "type": "email-signup",
-          "settings": {
-            "width": "fill",
-            "custom_width": 100,
-            "inherit_color_scheme": true,
-            "heading": "Get launch notes",
-            "heading_preset": "h5",
-            "color_scheme": "",
-            "border_style": "all",
-            "border_width": 1,
-            "border_radius": 100,
-            "input_type_preset": "paragraph",
-            "style_class": "button",
-            "display_type": "text",
-            "label": "Join",
-            "integrated_button": true,
-            "button_type_preset": "paragraph",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
         }
       },
       "block_order": [
         "text_brand",
         "text_support",
-        "text_legal",
-        "email_signup_launch"
+        "text_legal"
       ],
       "name": "t:names.footer",
       "settings": {
@@ -149,31 +123,11 @@
             "case": "none"
           },
           "blocks": {}
-        },
-        "social_links_launch": {
-          "type": "social-links",
-          "settings": {
-            "facebook_url": "https://www.facebook.com/pistanera",
-            "instagram_url": "https://www.instagram.com/pistanera",
-            "youtube_url": "https://www.youtube.com/@pistanera",
-            "tiktok_url": "https://www.tiktok.com/@pistanera",
-            "twitter_url": "https://x.com/pistanera",
-            "threads_url": "",
-            "linkedin_url": "",
-            "bluesky_url": "",
-            "snapchat_url": "",
-            "pinterest_url": "",
-            "tumblr_url": "",
-            "vimeo_url": "",
-            "custom_url": ""
-          },
-          "blocks": {}
         }
       },
       "block_order": [
         "footer_copyright_launch",
-        "footer_policy_list_launch",
-        "social_links_launch"
+        "footer_policy_list_launch"
       ],
       "name": "t:names.utilities",
       "settings": {

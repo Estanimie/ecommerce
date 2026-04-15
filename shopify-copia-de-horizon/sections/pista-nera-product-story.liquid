@@ -3,12 +3,13 @@
   if support_email == blank
     assign support_email = 'support@pistanera.com'
   endif
-  assign showcase_media = product.media[2]
-  if showcase_media == blank
-    assign showcase_media = product.featured_media
+
+  assign primary_media = product.media[2]
+  if primary_media == blank
+    assign primary_media = product.featured_media
   endif
 
-  assign secondary_media = product.media[3]
+  assign secondary_media = product.media[4]
   if secondary_media == blank
     assign secondary_media = product.featured_media
   endif
@@ -17,150 +18,128 @@
 <div class="section-background color-scheme-1"></div>
 <section class="section section--page-width color-scheme-1">
   <div
-    class="pista-nera-product-story spacing-style"
+    class="pista-nera-product-story pn-pdp-story spacing-style"
     style="{% render 'spacing-style', settings: section.settings %}"
   >
-    <div class="pista-nera-product-story__top" data-pn-reveal>
-      <div class="pista-nera-product-story__header">
-        <p class="pista-nera-product-story__label">PDP detail layer</p>
-        <h2>{{ product.title }} is now framed to convert like a single-product launch brand.</h2>
+    <div class="pn-pdp-story__split" data-pn-reveal>
+      <div class="pn-pdp-story__copy">
+        <p class="pn-home__section-label">Why drivers buy it</p>
+        <h2>Fast tire top-ups without cords, clutter, or a gas-station stop.</h2>
         <p>
-          The buy box stays native to Horizon for safer cart and checkout behavior. Everything below it exists to add
-          reassurance, product storytelling, and stronger dropshipping presentation without breaking the purchase flow.
+          Air Forge is built for everyday drivers who want a faster way to handle low tire pressure before it turns into
+          a bigger problem.
         </p>
-      </div>
-    </div>
-
-    <div class="pista-nera-product-story__showcase" data-pn-reveal>
-      <div class="pista-nera-product-story__support">
-        <p class="pista-nera-product-story__label">What it does</p>
-        <h3>Quick pressure corrections without the bulk of a traditional car compressor.</h3>
-        <p>
-          Air Forge is positioned as the upgrade from emergency-only inflators to something drivers actually want to keep
-          within reach. It handles routine top-ups, low-pressure fixes, bicycles, motorcycles, and road-trip gear while
-          still looking like a premium tool.
-        </p>
-        <ul class="pista-nera-home__utility-list">
-          <li>Digital pressure targeting for cleaner daily use.</li>
-          <li>Wireless format for faster access and easier storage.</li>
-          <li>LED support for low-light roadside checks.</li>
+        <ul class="pn-home__list">
+          <li>Useful for cars, motorcycles, bikes, and sports gear.</li>
+          <li>Preset PSI helps remove guesswork.</li>
+          <li>Compact enough to keep in the car full time.</li>
         </ul>
       </div>
 
-      <figure class="pista-nera-product-story__media" data-pn-parallax>
-        {% if showcase_media != blank and showcase_media.preview_image != blank %}
+      <div class="pn-pdp-story__media">
+        {% if primary_media != blank and primary_media.preview_image != blank %}
           {{
-            showcase_media.preview_image
+            primary_media.preview_image
             | image_url: width: 1400
             | image_tag:
-              class: 'pista-nera-product-story__media-image',
+              class: 'pn-pdp-story__image',
               loading: 'lazy',
               widths: '480, 720, 960, 1200',
-              alt: showcase_media.alt | default: product.title
+              alt: primary_media.alt | default: product.title
           }}
         {% endif %}
-        <div class="pista-nera-product-story__media-copy">
-          <strong>Looks cleaner than most emergency gear.</strong>
-          <p>That matters because this page is selling utility and taste at the same time.</p>
-        </div>
-      </figure>
+      </div>
     </div>
 
-    <div class="pista-nera-product-story__dual" data-pn-reveal>
-      <article class="pista-nera-product-story__immersive-card" data-pn-parallax>
+    <div class="pn-pdp-story__grid" data-pn-reveal>
+      <article class="pn-pdp-story__card">
+        <strong>Cordless convenience</strong>
+        <p>Grab it, attach it, and top up your tires without dragging cables around the car.</p>
+      </article>
+      <article class="pn-pdp-story__card">
+        <strong>Auto-stop precision</strong>
+        <p>Target the PSI you want and let the inflator stop when it gets there.</p>
+      </article>
+      <article class="pn-pdp-story__card">
+        <strong>Roadside-ready LED</strong>
+        <p>Use it at night, in parking garages, or anywhere visibility is less than ideal.</p>
+      </article>
+    </div>
+
+    <div class="pn-pdp-story__split pn-pdp-story__split--reverse" data-pn-reveal>
+      <div class="pn-pdp-story__media">
         {% if secondary_media != blank and secondary_media.preview_image != blank %}
           {{
             secondary_media.preview_image
             | image_url: width: 1400
             | image_tag:
-              class: 'pista-nera-product-story__immersive-image',
+              class: 'pn-pdp-story__image',
               loading: 'lazy',
               widths: '480, 720, 960, 1200',
               alt: secondary_media.alt | default: product.title
           }}
         {% endif %}
-        <div class="pista-nera-product-story__immersive-copy">
-          <p class="pista-nera-product-story__label">How it feels</p>
-          <strong>Utility-first, but still premium enough to justify a DTC price point.</strong>
-          <p>
-            The screen, LED, dark finish, and compact silhouette give the product enough visual character to support a
-            strong home page and a cleaner conversion story on the PDP.
-          </p>
-        </div>
-      </article>
+      </div>
 
-      <div class="pista-nera-product-story__grid">
-        <article class="pista-nera-product-story__card">
-          <strong>Mobile-first hierarchy</strong>
-          <p>The layout keeps title, stars, price, add to cart, and policy reassurance within a short scroll.</p>
+      <div class="pn-pdp-story__copy">
+        <p class="pn-home__section-label">What you get</p>
+        <h2>A simple product that solves an annoying problem fast.</h2>
+        <p>
+          This page is designed to answer the buying objections quickly: what it does, how it helps, how fast it ships,
+          and how returns work.
+        </p>
+        <ul class="pn-home__list">
+          <li>Fast top-ups without relying on public air pumps.</li>
+          <li>Compact storage inside the trunk or cabin.</li>
+          <li>Support by email within 24 business hours at {{ support_email }}.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pn-pdp-story__reviews" data-pn-reveal>
+      <div class="pn-home__section-copy">
+        <p class="pn-home__section-label">Customer-style proof</p>
+        <h2>Reviews that answer the question: “Will I actually use this?”</h2>
+      </div>
+
+      <div class="pn-home__reviews">
+        <article class="pn-home__review">
+          <div class="pn-home__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <strong>Worth keeping in the trunk</strong>
+          <blockquote>"It takes up almost no space and saved me from stopping for air on the way to work."</blockquote>
+          <footer>Verified customer</footer>
         </article>
-        <article class="pista-nera-product-story__card">
-          <strong>Native cart behavior</strong>
-          <p>Cart drawer and sticky add to cart stay inside the Horizon purchase flow instead of being rebuilt from scratch.</p>
+        <article class="pn-home__review">
+          <div class="pn-home__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <strong>Very easy to use</strong>
+          <blockquote>"The preset PSI is the part I like most. It feels much easier than older inflators."</blockquote>
+          <footer>Verified customer</footer>
         </article>
-        <article class="pista-nera-product-story__card">
-          <strong>Real product record</strong>
-          <p>The page now inherits actual Shopify media, handle, price, and publication state instead of placeholders.</p>
-        </article>
-        <article class="pista-nera-product-story__card">
-          <strong>Supplier-proofed interest</strong>
-          <p>Styled around a product with 4.9 average rating and 3592 marketplace reviews as proof of demand.</p>
+        <article class="pn-home__review">
+          <div class="pn-home__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <strong>Good for road trips</strong>
+          <blockquote>"I bought it for peace of mind before a long drive and now I just leave it in the car."</blockquote>
+          <footer>Verified customer</footer>
         </article>
       </div>
     </div>
 
-    <div class="pista-nera-product-story__reviews" data-pn-reveal>
-      <div class="pista-nera-product-story__reviews-head">
-        <p class="pista-nera-product-story__label">Supplier review preview</p>
-        <h3>How the review block can look before importing more customer feedback.</h3>
-      </div>
-
-      <div class="pista-nera-home__reviews">
-        <article class="pista-nera-home__review">
-          <div class="pista-nera-home__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="pista-nera-home__review-title">Compact but legit</p>
-          <blockquote>"Super."</blockquote>
-          <footer>AliExpress buyer / Jan 17, 2021</footer>
-        </article>
-        <article class="pista-nera-home__review">
-          <div class="pista-nera-home__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="pista-nera-home__review-title">Feels premium in hand</p>
-          <blockquote>"Arrived in 3 days, well packed, feels quality, makes noise but that is normal for the power it needs."</blockquote>
-          <footer>AliExpress buyer / Jan 12, 2021</footer>
-        </article>
-        <article class="pista-nera-home__review">
-          <div class="pista-nera-home__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="pista-nera-home__review-title">Worth keeping in the car</p>
-          <blockquote>"Portable size and premium finish make it easier to justify than a basic compressor."</blockquote>
-          <footer>Curated supplier sentiment</footer>
-        </article>
-        <article class="pista-nera-home__review">
-          <div class="pista-nera-home__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="pista-nera-home__review-title">Preset workflow sells it</p>
-          <blockquote>"The display and preset workflow make this much easier than older cable inflators."</blockquote>
-          <footer>Curated supplier sentiment</footer>
-        </article>
-        <article class="pista-nera-home__review">
-          <div class="pista-nera-home__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="pista-nera-home__review-title">Giftable accessory energy</p>
-          <blockquote>"This is the kind of car accessory that actually feels worth gifting."</blockquote>
-          <footer>Curated supplier sentiment</footer>
-        </article>
-      </div>
-    </div>
-
-    <div class="pista-nera-product-story__faq" data-pn-reveal>
-      <details class="pista-nera-product-story__faq-item">
-        <summary>Does the PDP use the real Shopify product?</summary>
-        <div>Yes. The product page is backed by the real Air Forge product record created in Shopify admin.</div>
+    <div class="pn-pdp-story__faq" data-pn-reveal>
+      <details class="pn-home__faq-item">
+        <summary>How fast is shipping?</summary>
+        <div>Current shipping estimates are 6-12 business days with tracking.</div>
       </details>
-      <details class="pista-nera-product-story__faq-item">
-        <summary>Why keep the storytelling layer under the buy box?</summary>
-        <div>It lets the store keep native purchase mechanics while still presenting the product like a premium launch brand.</div>
+      <details class="pn-home__faq-item">
+        <summary>What can I use it for?</summary>
+        <div>Air Forge is designed for car tires and can also be used for bikes, motorcycles, and similar inflation needs.</div>
       </details>
-      <details class="pista-nera-product-story__faq-item">
-        <summary>Can this structure support future car accessories?</summary>
-        <div>Yes. Once Air Forge is validated, the same pattern can be reused for adjacent automotive products.</div>
+      <details class="pn-home__faq-item">
+        <summary>What if I need a return?</summary>
+        <div>You have 30 days to contact support and start a return if the item is unused or arrives damaged.</div>
+      </details>
+      <details class="pn-home__faq-item">
+        <summary>How do I contact support?</summary>
+        <div>Email <a href="mailto:{{ support_email }}">{{ support_email }}</a> and we will get back to you within 24 business hours.</div>
       </details>
     </div>
   </div>
@@ -190,7 +169,7 @@
       "max": 120,
       "step": 4,
       "unit": "px",
-      "default": 24
+      "default": 20
     },
     {
       "type": "range",

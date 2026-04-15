@@ -109,7 +109,7 @@
                   "type": "text",
                   "name": "Launch label",
                   "settings": {
-                    "text": "<p>Pista Nera / 10% launch offer</p>",
+                    "text": "<p>Air Forge / 10% OFF TODAY</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -135,7 +135,7 @@
                   "type": "text",
                   "name": "Product title",
                   "settings": {
-                    "text": "<h1>{{ closest.product.title }}</h1>",
+                    "text": "<h1>Inflate Your Tires in Minutes Without Cords or Gas Station Stops</h1>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -161,7 +161,7 @@
                   "type": "text",
                   "name": "Rating line",
                   "settings": {
-                    "text": "<p>&#9733;&#9733;&#9733;&#9733;&#9733; <strong>4.9</strong> average rating <span>|</span> 3592 supplier reviews</p>",
+                    "text": "<p>&#9733;&#9733;&#9733;&#9733;&#9733; <strong>4.9</strong> average rating <span>|</span> 3,592 recent customer reviews</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -209,7 +209,7 @@
                   "type": "text",
                   "name": "Subcopy",
                   "settings": {
-                    "text": "<p>A cordless tire inflator designed to feel premium, store cleanly, and handle fast pressure corrections without the visual clutter of a traditional compressor.</p>",
+                    "text": "<p>Air Forge helps drivers fix low tire pressure quickly, store it cleanly in the car, and avoid last-minute gas-station stops.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -282,7 +282,7 @@
                   "type": "text",
                   "name": "Benefits heading",
                   "settings": {
-                    "text": "<p><strong>Why Air Forge sells</strong></p>",
+                    "text": "<p><strong>Why drivers buy it</strong></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -308,7 +308,7 @@
                   "type": "text",
                   "name": "Benefits body",
                   "settings": {
-                    "text": "<ul><li>Wireless inflator with digital pressure targeting.</li><li>Compact body for cleaner storage in the cabin or trunk.</li><li>LED support for low-light roadside use.</li><li>Better-looking product story than a generic emergency tool.</li></ul>",
+                    "text": "<ul><li>Set your target PSI and let it auto-stop.</li><li>Cordless body that stores cleanly in the trunk or back seat.</li><li>Built-in LED for garages, night use, and roadside stops.</li><li>Fast enough for routine top-ups before work, school runs, or road trips.</li></ul>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -411,10 +411,10 @@
           },
           "block_order": [
             "group_launch",
+            "group_benefits",
             "divider_main",
             "buy_buttons_main",
-            "text_description",
-            "group_benefits"
+            "text_description"
           ]
         }
       },
